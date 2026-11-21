@@ -1,22 +1,43 @@
 {
-  "masthead": "FRIDAY NIGHT",
+  "masthead": "Friday 20 November 2026",
+  "subhead": "Russian missiles hit Kyiv's bridges · Cyclone Akvan slams eastern India · AI sell-off sinks Asia's markets · UK and EU seal a deal",
+  "stats": [
+    { "val": "3", "label": "Kyiv bridges struck by Russian missiles" },
+    { "val": "300,000+", "label": "people evacuated ahead of Cyclone Akvan" },
+    { "val": "-5.6%", "label": "Taiwan stock index drop in AI sell-off" },
+    { "val": "2.3%", "label": "Japan annual consumer inflation rate" },
+    { "val": "$6B", "label": "Kenya South Lokichar oil project value" },
+    { "val": "5", "label": "Houthi drones intercepted by Saudi defenses" }
+  ],
+  "regions": [
+    { "text": "EUROPE 4", "color": "#3f51b5" },
+    { "text": "ASIA-PACIFIC 3", "color": "#c62828" },
+    { "text": "WORLD 2", "color": "#455a64" },
+    { "text": "MIDDLE EAST 2", "color": "#f9a825" },
+    { "text": "AMERICAS 2", "color": "#1976d2" },
+    { "text": "SCIENCE 2", "color": "#7b1fa2" },
+    { "text": "AFRICA 1", "color": "#388e3c" }
+  ],
+  "heroes": [
+    { "region": "KYIV, UKRAINE · WAR", "title": "Russian Missiles Hit Kyiv's Bridges, Cutting Dnipro Crossings", "body": "Three strategic bridges across the Dnipro river struck in early morning raids; emergency services report heavy structural damage and transport disruptions." },
+    { "region": "ODISHA, INDIA · CYCLONE", "title": "Cyclone Akvan Slams Eastern India With 140 km/h Winds", "body": "Category 3 storm makes landfall near Puri, bringing torrential storm surges and widespread blackouts; 300,000 evacuated." },
+    { "region": "TAIPEI · SEOUL · TOKYO · MARKETS", "title": "AI Stock Sell-Off Sinks Asian Tech Markets in Friday Rout", "body": "Heavy losses across Taiwan, South Korea, and Japan as major chipmakers and AI hardware suppliers suffer sharp valuation cuts." }
+  ],
   "grid": [
-    "EUROPEAN MISSILES HIT THREE KYIV BRIDGES",
-    "SEVERE CYCLONIC STORM AKVAN MAKES LANDFALL",
-    "ASIAN MARKETS PLUNGE ON AI SELL-OFF",
-    "HEADLINE 4",
-    "HEADLINE 5",
-    "HEADLINE 6",
-    "HEADLINE 7",
-    "HEADLINE 8",
-    "HEADLINE 9"
+    { "region": "UK · EU", "tag": "UK-EU DEAL: NEW ACCORD SEALED", "color": "#3f51b5", "body": "London and Brussels sign post-Brexit security and trade pact in Brussels." },
+    { "region": "GENEVA · CLIMATE", "tag": "COP31 CLIMATE TALKS STALL WITHOUT DEAL", "color": "#388e3c", "body": "Final day negotiations break down over emissions financing targets." },
+    { "region": "PRZEWODÓW · SECURITY", "tag": "POLAND TRACKS MISSILE NEAR BORDER", "color": "#c62828", "body": "Air defense systems triggered by stray rocket trajectory near Ukraine border." },
+    { "region": "BAGHDAD · DEFENSE", "tag": "IRAQI FORCES REINFORCE BORDER", "color": "#f9a825", "body": "Armored units deployed to western desert outposts citing regional security." },
+    { "region": "ROME · LABOR", "tag": "GENERAL STRIKE PARALYZES ITALY", "color": "#7b1fa2", "body": "Transit, health, and school workers strike over budget cuts and wages." },
+    { "region": "TURKANA · ENERGY", "tag": "KENYA OIL PROJECT ADVANCES", "color": "#388e3c", "body": "South Lokichar exploration clears final drilling permits for $8B field." },
+    { "region": "SAN SALVADOR · POLITICS", "tag": "BUKELÉ FILES THIRD-TERM BID", "color": "#c62828", "body": "El Salvador president formally registers candidacy for 2029 re-election." },
+    { "region": "WASHINGTON · LAW", "tag": "TRUMP BORDER ARCH ORDER HALTED", "color": "#1976d2", "body": "Federal judge blocks emergency funding use for commemorative monument." },
+    { "region": "JIZRAH · DEFENSE", "tag": "SAUDI DEFENSES INTERCEPT 5 DRONES", "color": "#c62828", "body": "Air defense systems destroy unmanned aircraft launched toward western areas." }
   ],
   "stories": [
-    "Story 1: Lorem ipsum dolor sit amet.",
-    "Story 2: Consectetur adipiscing elit.",
-    "Story 3: Sed do eiusmod tempor.",
-    "Story 4: Incididunt ut labore et dolore.",
-    "Story 5: Magna aliqua.",
-    "Story 6: Ut enim ad minim veniam."
-  ]
+    { "tag": "TURIN · WORLD", "title": "ATP Approves $350M+ Player Pay", "body": "Men's tennis tours seal record prize pool expansion starting next season.", "color": "#388e3c" },
+    { "tag": "ORBIT · SCIENCE", "title": "Dragon Undocks From Space Station", "body": "SpaceX Crew capsule departs ISS carrying return samples and data.", "color": "#1976d2" },
+    { "tag": "OUTER SOLAR SYSTEM · SCIENCE", "title": "NASA Detects New Neptune Ice Belt", "body": "Deep space survey maps icy trans-Neptunian objects past orbital rim.", "color": "#7b1fa2" }
+  ],
+  "dateCheck": "Left out as Thursday 19 November's news: the three-leader declaration in Shenzhen, the World Court's ruling on Myanmar, Tonga's drought emergency, and the migrant boat off Senegal."
 }
