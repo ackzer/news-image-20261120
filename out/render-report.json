@@ -1,0 +1,3265 @@
+{
+  "stage": "full-build",
+  "fontGateCommit": "9870d02209ef0e3a9eb01c0c112d2a01c9a4e6c5",
+  "lockedContentCanonicalSha256": "185831bc4a7abbea75c53e1eae8e2ee0e051eeb18fff5c1198a4d7fd24b9cefa",
+  "png": {
+    "width": 1024,
+    "height": 1024,
+    "colorType": 2,
+    "bitDepth": 8,
+    "scanlineFilter": 0,
+    "crcVerified": true,
+    "bytes": 54815,
+    "sha256": "8ad2fb2d13b641bd88d1e39a5585764113af9e5223d3f09edfa3eb8049190cf2"
+  },
+  "storyCount": 16,
+  "illustrationCount": 16,
+  "mapPinCount": 16,
+  "originalHeadlinesPreserved": true,
+  "completeSourcesPreserved": true,
+  "kpiValues": [
+    "3",
+    "300,000+",
+    "-5.6%",
+    "2.3%",
+    "$6B",
+    "5"
+  ],
+  "allTextBoxesDisjointAndWithinBounds": true,
+  "noFontShrinking": true,
+  "sentencePolicy": "Complete summary if it fits; otherwise first intact sentence if it fits, else second intact sentence. Never rewrite or cut inside a sentence.",
+  "layoutNotes": [
+    "Story #4 attribution is in its kicker row so one intact sentence fits at 9 px.",
+    "Actual rounded cell bounds retain a minimum one-pixel inter-letter gap.",
+    "Up to five 9 px lines fit some specified summary boxes without exceeding their pixel bounds.",
+    "After the first full render, headlines were balanced over two measured lines to remove orphans without changing words or sizes."
+  ],
+  "truncations": [
+    {
+      "id": 1,
+      "title": "Russian missiles hit three Kyiv bridges",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "Mayor Vitali Klitschko closed damaged river crossings to private traffic while parts of the capital lost power, heat, and water."
+        }
+      ],
+      "renderedText": "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others. (Kyiv Independent, BBC)",
+      "source": "(Kyiv Independent, BBC)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 24,
+        "y": 411,
+        "width": 314,
+        "height": 59
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 68
+    },
+    {
+      "id": 4,
+      "title": "UK and EU seal Brussels reset summit deal",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The agreement expands cooperation on maritime defense, hybrid threat intelligence, irregular migration, and youth educational exchanges."
+        }
+      ],
+      "renderedText": "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels.",
+      "source": "(EU Council, Reuters)",
+      "sourcePlacement": "kicker",
+      "summaryBox": {
+        "x": 24,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 5,
+      "title": "COP31 stalls on final day over fossil fuels",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Delegations remained divided over transition timelines and climate finance commitments for developing economies."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Climate negotiations at COP31 in Antalya entered their scheduled final day without consensus after oil-producing nations opposed explicit fossil fuel phase-out wording."
+        }
+      ],
+      "renderedText": "Delegations remained divided over transition timelines and climate finance commitments for developing economies. (UN News, Reuters)",
+      "source": "(UN News, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 222,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 6,
+      "title": "Russian missile crashes in southern Poland",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A Russian cruise missile crashed in southeastern Poland while thousands of European troops conducted military exercises in the region."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "Polish officials condemned the incident as an intentional provocation and placed regional air defenses on heightened alert."
+        }
+      ],
+      "renderedText": "A Russian cruise missile crashed in southeastern Poland while thousands of European troops conducted military exercises in the region. (AP, Reuters)",
+      "source": "(AP, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 7,
+      "title": "Iraqi forces enter Jurf al-Sakhar stronghold",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Prime Minister Ali al-Zaidi established a joint command to restore state authority and halt illicit pipeline oil smuggling."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Iraqi army units and federal police deployed armored vehicles into Jurf al-Sakhar southwest of Baghdad under a security compromise with Kataib Hezbollah."
+        }
+      ],
+      "renderedText": "Prime Minister Ali al-Zaidi established a joint command to restore state authority and halt illicit pipeline oil smuggling. (The National, Crisis Group)",
+      "source": "(The National, Crisis Group)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 8,
+      "title": "Workers and students strike across Europe",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Protesters demanded higher wages and stronger housing and education funding instead of increased military spending."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Labor unions and university students staged coordinated strikes and street marches across Italy and Croatia over rising living costs and public budget priorities."
+        }
+      ],
+      "renderedText": "Protesters demanded higher wages and stronger housing and education funding instead of increased military spending. (Al Jazeera, Reuters)",
+      "source": "(Al Jazeera, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 9,
+      "title": "Japan headline inflation rises to 2.3%",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Core inflation ticked up to 2.2%, keeping pressure on the Bank of Japan ahead of next month's rate decision."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Government data showed Japan's headline consumer inflation accelerated to 2.3% following the expiration of household energy subsidies and higher fuel costs."
+        }
+      ],
+      "renderedText": "Core inflation ticked up to 2.2%, keeping pressure on the Bank of Japan ahead of next month's rate decision. (Reuters, Briefs Finance)",
+      "source": "(Reuters, Briefs Finance)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 24,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 10,
+      "title": "Kenya starts drilling first Turkana oil well",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Kenya switched on drilling operations for its first commercial oil well in Turkana's South Lokichar basin."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The $6 billion energy project aims to deliver first crude production early next month."
+        }
+      ],
+      "renderedText": "Kenya switched on drilling operations for its first commercial oil well in Turkana's South Lokichar basin. (allAfrica, IntelliNews)",
+      "source": "(allAfrica, IntelliNews)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 222,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 79
+    },
+    {
+      "id": 11,
+      "title": "El Salvador's Bukele files for third term",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Salvadoran President Nayib Bukele formally registered his candidacy to seek a third presidential term."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The filing came as his administration simultaneously expanded overseas security deployments to combat gang violence in Haiti."
+        }
+      ],
+      "renderedText": "Salvadoran President Nayib Bukele formally registered his candidacy to seek a third presidential term. (AP, FDD)",
+      "source": "(AP, FDD)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 91
+    },
+    {
+      "id": 12,
+      "title": "Second federal judge blocks Trump arch plan",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A second U.S. federal judge issued an order halting President Donald Trump's proposed triumphal arch monument in Washington."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The court ruled that legal challenges against the project's approval process are likely to succeed."
+        }
+      ],
+      "renderedText": "A second U.S. federal judge issued an order halting President Donald Trump's proposed triumphal arch monument in Washington. (NPR, AP)",
+      "source": "(NPR, AP)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 91
+    },
+    {
+      "id": 13,
+      "title": "Saudi coalition intercepts drones over Riyadh",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Saudi air defenses intercepted five Houthi drones and one ballistic missile aimed toward Riyadh and southern border facilities."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The Saudi-led coalition responded with airstrikes targeting Houthi missile and smuggling sites in Sanaa and Hodeidah."
+        }
+      ],
+      "renderedText": "Saudi air defenses intercepted five Houthi drones and one ballistic missile aimed toward Riyadh and southern border facilities. (AP)",
+      "source": "(AP)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 90
+    },
+    {
+      "id": 14,
+      "title": "ATP backs plan to lift player pay past $350m",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "The Association of Tennis Professionals approved a global tour reform plan in Turin aimed at lifting total player compensation past $350 million."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The package expands revenue sharing and minimum earnings guarantees for lower-ranked players competing across international circuits."
+        }
+      ],
+      "renderedText": "The Association of Tennis Professionals approved a global tour reform plan in Turin aimed at lifting total player compensation past $350 million. (Anadolu, Reuters)",
+      "source": "(Anadolu, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 6,
+      "renderedHeight": 67,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 15,
+      "title": "SpaceX Dragon undocks from space station",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A SpaceX Dragon cargo spacecraft undocked from the International Space Station carrying scientific experiments and research samples back to Earth."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "NASA flight controllers confirmed a clean separation as the capsule began its return trajectory."
+        }
+      ],
+      "renderedText": "A SpaceX Dragon cargo spacecraft undocked from the International Space Station carrying scientific experiments and research samples back to Earth. (NASA)",
+      "source": "(NASA)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 6,
+      "renderedHeight": 67,
+      "completeSummaryHeight": 101
+    },
+    {
+      "id": 16,
+      "title": "NASA finds clues to ancient ice past Neptune",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Planetary scientists at NASA reported new spectroscopic evidence of ancient subsurface ice reservoirs on distant objects orbiting beyond Neptune."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The findings shed light on how water and volatile compounds survived in the outer solar system."
+        }
+      ],
+      "renderedText": "Planetary scientists at NASA reported new spectroscopic evidence of ancient subsurface ice reservoirs on distant objects orbiting beyond Neptune. (NASA)",
+      "source": "(NASA)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 91
+    }
+  ],
+  "completeSummaries": [
+    2,
+    3
+  ],
+  "headlines": [
+    {
+      "id": 1,
+      "title": "Russian missiles hit three Kyiv bridges",
+      "lines": [
+        "Russian missiles hit",
+        "three Kyiv bridges"
+      ],
+      "capHeight": 14,
+      "leading": 18,
+      "box": {
+        "x": 24,
+        "y": 366,
+        "width": 314,
+        "height": 42
+      },
+      "usedHeight": 34
+    },
+    {
+      "id": 2,
+      "title": "Cyclone Akvan slams eastern India coast",
+      "lines": [
+        "Cyclone Akvan slams",
+        "eastern India coast"
+      ],
+      "capHeight": 14,
+      "leading": 18,
+      "box": {
+        "x": 355,
+        "y": 366,
+        "width": 314,
+        "height": 42
+      },
+      "usedHeight": 32
+    },
+    {
+      "id": 3,
+      "title": "AI stock sell-off sinks Asian markets",
+      "lines": [
+        "AI stock sell-off",
+        "sinks Asian markets"
+      ],
+      "capHeight": 14,
+      "leading": 18,
+      "box": {
+        "x": 686,
+        "y": 366,
+        "width": 314,
+        "height": 42
+      },
+      "usedHeight": 32
+    },
+    {
+      "id": 4,
+      "title": "UK and EU seal Brussels reset summit deal",
+      "lines": [
+        "UK and EU seal Brussels",
+        "reset summit deal"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 24,
+        "y": 542,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 25
+    },
+    {
+      "id": 5,
+      "title": "COP31 stalls on final day over fossil fuels",
+      "lines": [
+        "COP31 stalls on final",
+        "day over fossil fuels"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 222,
+        "y": 542,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 6,
+      "title": "Russian missile crashes in southern Poland",
+      "lines": [
+        "Russian missile crashes",
+        "in southern Poland"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 420,
+        "y": 542,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 25
+    },
+    {
+      "id": 7,
+      "title": "Iraqi forces enter Jurf al-Sakhar stronghold",
+      "lines": [
+        "Iraqi forces enter Jurf",
+        "al-Sakhar stronghold"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 618,
+        "y": 542,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 8,
+      "title": "Workers and students strike across Europe",
+      "lines": [
+        "Workers and students",
+        "strike across Europe"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 816,
+        "y": 542,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 9,
+      "title": "Japan headline inflation rises to 2.3%",
+      "lines": [
+        "Japan headline",
+        "inflation rises to 2.3%"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 24,
+        "y": 698,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 25
+    },
+    {
+      "id": 10,
+      "title": "Kenya starts drilling first Turkana oil well",
+      "lines": [
+        "Kenya starts drilling",
+        "first Turkana oil well"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 222,
+        "y": 698,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 25
+    },
+    {
+      "id": 11,
+      "title": "El Salvador's Bukele files for third term",
+      "lines": [
+        "El Salvador's Bukele",
+        "files for third term"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 420,
+        "y": 698,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 25
+    },
+    {
+      "id": 12,
+      "title": "Second federal judge blocks Trump arch plan",
+      "lines": [
+        "Second federal judge",
+        "blocks Trump arch plan"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 618,
+        "y": 698,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 13,
+      "title": "Saudi coalition intercepts drones over Riyadh",
+      "lines": [
+        "Saudi coalition intercepts",
+        "drones over Riyadh"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 816,
+        "y": 698,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 14,
+      "title": "ATP backs plan to lift player pay past $350m",
+      "lines": [
+        "ATP backs plan to lift",
+        "player pay past $350m"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 420,
+        "y": 856,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 15,
+      "title": "SpaceX Dragon undocks from space station",
+      "lines": [
+        "SpaceX Dragon undocks",
+        "from space station"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 618,
+        "y": 856,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    },
+    {
+      "id": 16,
+      "title": "NASA finds clues to ancient ice past Neptune",
+      "lines": [
+        "NASA finds clues to",
+        "ancient ice past Neptune"
+      ],
+      "capHeight": 11,
+      "leading": 13.5,
+      "box": {
+        "x": 816,
+        "y": 856,
+        "width": 184,
+        "height": 28
+      },
+      "usedHeight": 27
+    }
+  ],
+  "summaries": [
+    {
+      "id": 1,
+      "title": "Russian missiles hit three Kyiv bridges",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "Mayor Vitali Klitschko closed damaged river crossings to private traffic while parts of the capital lost power, heat, and water."
+        }
+      ],
+      "renderedText": "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others. (Kyiv Independent, BBC)",
+      "source": "(Kyiv Independent, BBC)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 24,
+        "y": 411,
+        "width": 314,
+        "height": 59
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 68
+    },
+    {
+      "id": 2,
+      "title": "Cyclone Akvan slams eastern India coast",
+      "retainedSentenceNumbers": [
+        1,
+        2
+      ],
+      "retainedSentences": [
+        "Severe Cyclonic Storm Akvan made landfall near Gopalpur in Odisha around 8 am with sustained winds of 70 to 90 km/h.",
+        "Authorities evacuated more than 300,000 residents into 9,341 shelters and deployed 423 rescue teams across vulnerable coastal districts."
+      ],
+      "omittedSentences": [],
+      "renderedText": "Severe Cyclonic Storm Akvan made landfall near Gopalpur in Odisha around 8 am with sustained winds of 70 to 90 km/h. Authorities evacuated more than 300,000 residents into 9,341 shelters and deployed 423 rescue teams across vulnerable coastal districts. (IMD, DD News)",
+      "source": "(IMD, DD News)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 355,
+        "y": 411,
+        "width": 314,
+        "height": 59
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 56
+    },
+    {
+      "id": 3,
+      "title": "AI stock sell-off sinks Asian markets",
+      "retainedSentenceNumbers": [
+        1,
+        2
+      ],
+      "retainedSentences": [
+        "Technology and chipmaking shares tumbled across Asia as investors pulled back from high-valuation artificial intelligence stocks.",
+        "Taiwan's benchmark index fell 5.6%, South Korea's KOSPI dropped 5.3%, and Japan's Nikkei 225 lost 4.8%."
+      ],
+      "omittedSentences": [],
+      "renderedText": "Technology and chipmaking shares tumbled across Asia as investors pulled back from high-valuation artificial intelligence stocks. Taiwan's benchmark index fell 5.6%, South Korea's KOSPI dropped 5.3%, and Japan's Nikkei 225 lost 4.8%. (Reuters, LGT)",
+      "source": "(Reuters, LGT)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 686,
+        "y": 411,
+        "width": 314,
+        "height": 59
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 56
+    },
+    {
+      "id": 4,
+      "title": "UK and EU seal Brussels reset summit deal",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The agreement expands cooperation on maritime defense, hybrid threat intelligence, irregular migration, and youth educational exchanges."
+        }
+      ],
+      "renderedText": "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels.",
+      "source": "(EU Council, Reuters)",
+      "sourcePlacement": "kicker",
+      "summaryBox": {
+        "x": 24,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 5,
+      "title": "COP31 stalls on final day over fossil fuels",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Delegations remained divided over transition timelines and climate finance commitments for developing economies."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Climate negotiations at COP31 in Antalya entered their scheduled final day without consensus after oil-producing nations opposed explicit fossil fuel phase-out wording."
+        }
+      ],
+      "renderedText": "Delegations remained divided over transition timelines and climate finance commitments for developing economies. (UN News, Reuters)",
+      "source": "(UN News, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 222,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 6,
+      "title": "Russian missile crashes in southern Poland",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A Russian cruise missile crashed in southeastern Poland while thousands of European troops conducted military exercises in the region."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "Polish officials condemned the incident as an intentional provocation and placed regional air defenses on heightened alert."
+        }
+      ],
+      "renderedText": "A Russian cruise missile crashed in southeastern Poland while thousands of European troops conducted military exercises in the region. (AP, Reuters)",
+      "source": "(AP, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 7,
+      "title": "Iraqi forces enter Jurf al-Sakhar stronghold",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Prime Minister Ali al-Zaidi established a joint command to restore state authority and halt illicit pipeline oil smuggling."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Iraqi army units and federal police deployed armored vehicles into Jurf al-Sakhar southwest of Baghdad under a security compromise with Kataib Hezbollah."
+        }
+      ],
+      "renderedText": "Prime Minister Ali al-Zaidi established a joint command to restore state authority and halt illicit pipeline oil smuggling. (The National, Crisis Group)",
+      "source": "(The National, Crisis Group)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 8,
+      "title": "Workers and students strike across Europe",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Protesters demanded higher wages and stronger housing and education funding instead of increased military spending."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Labor unions and university students staged coordinated strikes and street marches across Italy and Croatia over rising living costs and public budget priorities."
+        }
+      ],
+      "renderedText": "Protesters demanded higher wages and stronger housing and education funding instead of increased military spending. (Al Jazeera, Reuters)",
+      "source": "(Al Jazeera, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 9,
+      "title": "Japan headline inflation rises to 2.3%",
+      "retainedSentenceNumbers": [
+        2
+      ],
+      "retainedSentences": [
+        "Core inflation ticked up to 2.2%, keeping pressure on the Bank of Japan ahead of next month's rate decision."
+      ],
+      "omittedSentences": [
+        {
+          "number": 1,
+          "text": "Government data showed Japan's headline consumer inflation accelerated to 2.3% following the expiration of household energy subsidies and higher fuel costs."
+        }
+      ],
+      "renderedText": "Core inflation ticked up to 2.2%, keeping pressure on the Bank of Japan ahead of next month's rate decision. (Reuters, Briefs Finance)",
+      "source": "(Reuters, Briefs Finance)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 24,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 102
+    },
+    {
+      "id": 10,
+      "title": "Kenya starts drilling first Turkana oil well",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Kenya switched on drilling operations for its first commercial oil well in Turkana's South Lokichar basin."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The $6 billion energy project aims to deliver first crude production early next month."
+        }
+      ],
+      "renderedText": "Kenya switched on drilling operations for its first commercial oil well in Turkana's South Lokichar basin. (allAfrica, IntelliNews)",
+      "source": "(allAfrica, IntelliNews)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 222,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 79
+    },
+    {
+      "id": 11,
+      "title": "El Salvador's Bukele files for third term",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Salvadoran President Nayib Bukele formally registered his candidacy to seek a third presidential term."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The filing came as his administration simultaneously expanded overseas security deployments to combat gang violence in Haiti."
+        }
+      ],
+      "renderedText": "Salvadoran President Nayib Bukele formally registered his candidacy to seek a third presidential term. (AP, FDD)",
+      "source": "(AP, FDD)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 91
+    },
+    {
+      "id": 12,
+      "title": "Second federal judge blocks Trump arch plan",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A second U.S. federal judge issued an order halting President Donald Trump's proposed triumphal arch monument in Washington."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The court ruled that legal challenges against the project's approval process are likely to succeed."
+        }
+      ],
+      "renderedText": "A second U.S. federal judge issued an order halting President Donald Trump's proposed triumphal arch monument in Washington. (NPR, AP)",
+      "source": "(NPR, AP)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 4,
+      "renderedHeight": 45,
+      "completeSummaryHeight": 91
+    },
+    {
+      "id": 13,
+      "title": "Saudi coalition intercepts drones over Riyadh",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Saudi air defenses intercepted five Houthi drones and one ballistic missile aimed toward Riyadh and southern border facilities."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The Saudi-led coalition responded with airstrikes targeting Houthi missile and smuggling sites in Sanaa and Hodeidah."
+        }
+      ],
+      "renderedText": "Saudi air defenses intercepted five Houthi drones and one ballistic missile aimed toward Riyadh and southern border facilities. (AP)",
+      "source": "(AP)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 729,
+        "width": 184,
+        "height": 56
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 55,
+      "completeSummaryHeight": 90
+    },
+    {
+      "id": 14,
+      "title": "ATP backs plan to lift player pay past $350m",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "The Association of Tennis Professionals approved a global tour reform plan in Turin aimed at lifting total player compensation past $350 million."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The package expands revenue sharing and minimum earnings guarantees for lower-ranked players competing across international circuits."
+        }
+      ],
+      "renderedText": "The Association of Tennis Professionals approved a global tour reform plan in Turin aimed at lifting total player compensation past $350 million. (Anadolu, Reuters)",
+      "source": "(Anadolu, Reuters)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 420,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 6,
+      "renderedHeight": 67,
+      "completeSummaryHeight": 114
+    },
+    {
+      "id": 15,
+      "title": "SpaceX Dragon undocks from space station",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "A SpaceX Dragon cargo spacecraft undocked from the International Space Station carrying scientific experiments and research samples back to Earth."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "NASA flight controllers confirmed a clean separation as the capsule began its return trajectory."
+        }
+      ],
+      "renderedText": "A SpaceX Dragon cargo spacecraft undocked from the International Space Station carrying scientific experiments and research samples back to Earth. (NASA)",
+      "source": "(NASA)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 618,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 6,
+      "renderedHeight": 67,
+      "completeSummaryHeight": 101
+    },
+    {
+      "id": 16,
+      "title": "NASA finds clues to ancient ice past Neptune",
+      "retainedSentenceNumbers": [
+        1
+      ],
+      "retainedSentences": [
+        "Planetary scientists at NASA reported new spectroscopic evidence of ancient subsurface ice reservoirs on distant objects orbiting beyond Neptune."
+      ],
+      "omittedSentences": [
+        {
+          "number": 2,
+          "text": "The findings shed light on how water and volatile compounds survived in the outer solar system."
+        }
+      ],
+      "renderedText": "Planetary scientists at NASA reported new spectroscopic evidence of ancient subsurface ice reservoirs on distant objects orbiting beyond Neptune. (NASA)",
+      "source": "(NASA)",
+      "sourcePlacement": "summary",
+      "summaryBox": {
+        "x": 816,
+        "y": 887,
+        "width": 184,
+        "height": 76
+      },
+      "capHeight": 9,
+      "leading": 11.5,
+      "renderedLines": 5,
+      "renderedHeight": 56,
+      "completeSummaryHeight": 91
+    }
+  ],
+  "pins": [
+    {
+      "id": 1,
+      "x": 247,
+      "y": 844,
+      "actualX": 246.54,
+      "actualY": 844.5,
+      "color": "#1E3A5F",
+      "place": "Kyiv"
+    },
+    {
+      "id": 2,
+      "x": 303,
+      "y": 872,
+      "actualX": 302.7,
+      "actualY": 872.02,
+      "color": "#8B1E24",
+      "place": "Gopalpur"
+    },
+    {
+      "id": 3,
+      "x": 341,
+      "y": 867,
+      "actualX": 340.61,
+      "actualY": 866.94,
+      "color": "#8B1E24",
+      "place": "Taipei"
+    },
+    {
+      "id": 4,
+      "x": 219,
+      "y": 844,
+      "actualX": 219.5,
+      "actualY": 844.15,
+      "color": "#1E3A5F",
+      "place": "Brussels"
+    },
+    {
+      "id": 5,
+      "x": 263,
+      "y": 856,
+      "actualX": 246.71,
+      "actualY": 856.48,
+      "color": "#374151",
+      "place": "Antalya"
+    },
+    {
+      "id": 6,
+      "x": 238,
+      "y": 829,
+      "actualX": 237.73,
+      "actualY": 844.81,
+      "color": "#1E3A5F",
+      "place": "SE Poland"
+    },
+    {
+      "id": 7,
+      "x": 261,
+      "y": 876,
+      "actualX": 260.69,
+      "actualY": 860.04,
+      "color": "#9A5B13",
+      "place": "Jurf al-Sakhar"
+    },
+    {
+      "id": 8,
+      "x": 228,
+      "y": 868,
+      "actualX": 227.92,
+      "actualY": 852.05,
+      "color": "#1E3A5F",
+      "place": "Rome"
+    },
+    {
+      "id": 9,
+      "x": 359,
+      "y": 858,
+      "actualX": 359.35,
+      "actualY": 857.54,
+      "color": "#8B1E24",
+      "place": "Tokyo"
+    },
+    {
+      "id": 10,
+      "x": 251,
+      "y": 902,
+      "actualX": 250.75,
+      "actualY": 886.47,
+      "color": "#166534",
+      "place": "South Lokichar"
+    },
+    {
+      "id": 11,
+      "x": 123,
+      "y": 877,
+      "actualX": 122.81,
+      "actualY": 876.95,
+      "color": "#155E75",
+      "place": "San Salvador"
+    },
+    {
+      "id": 12,
+      "x": 135,
+      "y": 855,
+      "actualX": 135.43,
+      "actualY": 854.7,
+      "color": "#155E75",
+      "place": "Washington"
+    },
+    {
+      "id": 13,
+      "x": 279,
+      "y": 867,
+      "actualX": 263.23,
+      "actualY": 867.22,
+      "color": "#9A5B13",
+      "place": "Riyadh"
+    },
+    {
+      "id": 14,
+      "x": 212,
+      "y": 860,
+      "actualX": 222.94,
+      "actualY": 849.25,
+      "color": "#374151",
+      "place": "Turin"
+    },
+    {
+      "id": 15,
+      "x": 117,
+      "y": 863,
+      "actualX": 116.74,
+      "actualY": 862.94,
+      "color": "#4338CA",
+      "place": "Houston"
+    },
+    {
+      "id": 16,
+      "x": 93,
+      "y": 859,
+      "actualX": 92.93,
+      "actualY": 858.89,
+      "color": "#4338CA",
+      "place": "Pasadena"
+    }
+  ],
+  "textBoxes": [
+    {
+      "text": "THE WORLD IN ONE DAY",
+      "x": 24,
+      "y": 16,
+      "width": 128,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "16 STORIES · 7 REGIONS · EVERY ONE DATED FRIDAY 20 NOVEMBER 2026",
+      "x": 595,
+      "y": 16,
+      "width": 405,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Friday 20 November 2026",
+      "x": 197,
+      "y": 46,
+      "width": 630,
+      "height": 50,
+      "capHeight": 44
+    },
+    {
+      "text": "Russian missiles hit Kyiv's bridges · Cyclone Akvan slams eastern India · AI sell-off sinks Asia's markets · UK and EU seal a deal",
+      "x": 225,
+      "y": 110,
+      "width": 574,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "3",
+      "x": 97,
+      "y": 138,
+      "width": 17,
+      "height": 24,
+      "capHeight": 24
+    },
+    {
+      "text": "Kyiv bridges struck by",
+      "x": 49,
+      "y": 169,
+      "width": 113,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "Russian missiles",
+      "x": 65,
+      "y": 179,
+      "width": 80,
+      "height": 8,
+      "capHeight": 8
+    },
+    {
+      "text": "300,000+",
+      "x": 198,
+      "y": 138,
+      "width": 140,
+      "height": 27,
+      "capHeight": 24
+    },
+    {
+      "text": "people evacuated ahead of",
+      "x": 199,
+      "y": 169,
+      "width": 137,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "Cyclone Akvan",
+      "x": 230,
+      "y": 179,
+      "width": 75,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "-5.6%",
+      "x": 394,
+      "y": 138,
+      "width": 72,
+      "height": 24,
+      "capHeight": 24
+    },
+    {
+      "text": "Taiwan stock index drop in AI",
+      "x": 356,
+      "y": 169,
+      "width": 149,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "sell-off",
+      "x": 413,
+      "y": 179,
+      "width": 35,
+      "height": 8,
+      "capHeight": 8
+    },
+    {
+      "text": "2.3%",
+      "x": 563,
+      "y": 138,
+      "width": 60,
+      "height": 24,
+      "capHeight": 24
+    },
+    {
+      "text": "Japan annual consumer",
+      "x": 534,
+      "y": 169,
+      "width": 118,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "inflation rate",
+      "x": 562,
+      "y": 179,
+      "width": 62,
+      "height": 8,
+      "capHeight": 8
+    },
+    {
+      "text": "$6B",
+      "x": 728,
+      "y": 138,
+      "width": 55,
+      "height": 24,
+      "capHeight": 24
+    },
+    {
+      "text": "Kenya South Lokichar oil",
+      "x": 694,
+      "y": 169,
+      "width": 124,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "project value",
+      "x": 723,
+      "y": 179,
+      "width": 66,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "5",
+      "x": 910,
+      "y": 138,
+      "width": 17,
+      "height": 24,
+      "capHeight": 24
+    },
+    {
+      "text": "Houthi drones intercepted by",
+      "x": 846,
+      "y": 169,
+      "width": 144,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "Saudi defenses",
+      "x": 880,
+      "y": 179,
+      "width": 76,
+      "height": 8,
+      "capHeight": 8
+    },
+    {
+      "text": "Europe 4",
+      "x": 122,
+      "y": 205,
+      "width": 47,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Asia-Pacific 3",
+      "x": 324,
+      "y": 205,
+      "width": 71,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "World 2",
+      "x": 492,
+      "y": 205,
+      "width": 39,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Middle East 2",
+      "x": 598,
+      "y": 205,
+      "width": 71,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Americas 2",
+      "x": 728,
+      "y": 205,
+      "width": 56,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Science 2",
+      "x": 853,
+      "y": 205,
+      "width": 50,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Africa 1",
+      "x": 949,
+      "y": 205,
+      "width": 40,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "KYIV",
+      "x": 34,
+      "y": 235,
+      "width": 25,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "3 bridges hit",
+      "x": 34,
+      "y": 259,
+      "width": 62,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "Officials' count",
+      "x": 34,
+      "y": 330,
+      "width": 65,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "1",
+      "x": 29,
+      "y": 353,
+      "width": 3,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "KYIV, UKRAINE · WAR",
+      "x": 44,
+      "y": 353,
+      "width": 96,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "Russian missiles hit",
+      "x": 24,
+      "y": 366,
+      "width": 149,
+      "height": 14,
+      "capHeight": 14
+    },
+    {
+      "text": "three Kyiv bridges",
+      "x": 24,
+      "y": 384,
+      "width": 143,
+      "height": 16,
+      "capHeight": 14
+    },
+    {
+      "text": "Overnight Russian missile and drone barrages struck three",
+      "x": 24,
+      "y": 411,
+      "width": 311,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "bridges across the Dnipro River in Kyiv, killing at least",
+      "x": 24,
+      "y": 423,
+      "width": 294,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "nine people across Ukraine and injuring 28 others. (Kyiv",
+      "x": 24,
+      "y": 434,
+      "width": 298,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Independent, BBC)",
+      "x": 24,
+      "y": 446,
+      "width": 98,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "CYCLONE AKVAN",
+      "x": 365,
+      "y": 235,
+      "width": 87,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Landfall · 8 am",
+      "x": 365,
+      "y": 259,
+      "width": 73,
+      "height": 8,
+      "capHeight": 8
+    },
+    {
+      "text": "Weather office",
+      "x": 365,
+      "y": 330,
+      "width": 62,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "2",
+      "x": 359,
+      "y": 353,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "ODISHA, INDIA · CYCLONE",
+      "x": 375,
+      "y": 353,
+      "width": 117,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "Cyclone Akvan slams",
+      "x": 355,
+      "y": 366,
+      "width": 166,
+      "height": 16,
+      "capHeight": 14
+    },
+    {
+      "text": "eastern India coast",
+      "x": 355,
+      "y": 384,
+      "width": 152,
+      "height": 14,
+      "capHeight": 14
+    },
+    {
+      "text": "Severe Cyclonic Storm Akvan made landfall near Gopalpur",
+      "x": 355,
+      "y": 411,
+      "width": 311,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "in Odisha around 8 am with sustained winds of 70 to 90",
+      "x": 355,
+      "y": 423,
+      "width": 296,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "km/h. Authorities evacuated more than 300,000 residents",
+      "x": 355,
+      "y": 434,
+      "width": 308,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "into 9,341 shelters and deployed 423 rescue teams",
+      "x": 355,
+      "y": 446,
+      "width": 277,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "across vulnerable coastal districts. (IMD, DD News)",
+      "x": 355,
+      "y": 457,
+      "width": 277,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "AI SELL-OFF",
+      "x": 696,
+      "y": 235,
+      "width": 68,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Asia, Friday's close",
+      "x": 696,
+      "y": 259,
+      "width": 97,
+      "height": 9,
+      "capHeight": 8
+    },
+    {
+      "text": "Closing prices",
+      "x": 696,
+      "y": 330,
+      "width": 60,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "Taipei",
+      "x": 897,
+      "y": 271,
+      "width": 28,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "-5.6%",
+      "x": 967,
+      "y": 271,
+      "width": 27,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Seoul",
+      "x": 897,
+      "y": 291,
+      "width": 28,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "-5.3%",
+      "x": 967,
+      "y": 291,
+      "width": 27,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Tokyo",
+      "x": 897,
+      "y": 311,
+      "width": 30,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "-4.8%",
+      "x": 967,
+      "y": 311,
+      "width": 27,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "3",
+      "x": 690,
+      "y": 353,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "TAIPEI · SEOUL · TOKYO · MARKETS",
+      "x": 706,
+      "y": 353,
+      "width": 162,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "AI stock sell-off",
+      "x": 686,
+      "y": 366,
+      "width": 132,
+      "height": 14,
+      "capHeight": 14
+    },
+    {
+      "text": "sinks Asian markets",
+      "x": 686,
+      "y": 384,
+      "width": 154,
+      "height": 14,
+      "capHeight": 14
+    },
+    {
+      "text": "Technology and chipmaking shares tumbled across Asia as",
+      "x": 686,
+      "y": 411,
+      "width": 307,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "investors pulled back from high-valuation artificial",
+      "x": 686,
+      "y": 423,
+      "width": 268,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "intelligence stocks. Taiwan's benchmark index fell 5.6%,",
+      "x": 686,
+      "y": 434,
+      "width": 294,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "South Korea's KOSPI dropped 5.3%, and Japan's Nikkei",
+      "x": 686,
+      "y": 446,
+      "width": 289,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "225 lost 4.8%. (Reuters, LGT)",
+      "x": 686,
+      "y": 457,
+      "width": 161,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "UK-EU DEAL",
+      "x": 32,
+      "y": 486,
+      "width": 54,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Agreed · EU Council",
+      "x": 114,
+      "y": 513,
+      "width": 86,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "4",
+      "x": 28,
+      "y": 530,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "UK · EU",
+      "x": 44,
+      "y": 530,
+      "width": 33,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "(EU Council, Reuters)",
+      "x": 93,
+      "y": 528,
+      "width": 115,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "UK and EU seal Brussels",
+      "x": 24,
+      "y": 542,
+      "width": 159,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "reset summit deal",
+      "x": 24,
+      "y": 556,
+      "width": 110,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "British Prime Minister Andy",
+      "x": 24,
+      "y": 573,
+      "width": 138,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Burnham and European Union",
+      "x": 24,
+      "y": 585,
+      "width": 150,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "leaders Ursula von der Leyen and",
+      "x": 24,
+      "y": 596,
+      "width": 181,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "António Costa signed a joint",
+      "x": 24,
+      "y": 608,
+      "width": 148,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "summit pact in Brussels.",
+      "x": 24,
+      "y": 619,
+      "width": 126,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "COP31: NO DEAL",
+      "x": 230,
+      "y": 486,
+      "width": 72,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Final day · UN News",
+      "x": 311,
+      "y": 513,
+      "width": 87,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "5",
+      "x": 226,
+      "y": 530,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "ANTALYA · WORLD",
+      "x": 242,
+      "y": 530,
+      "width": 79,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "COP31 stalls on final",
+      "x": 222,
+      "y": 542,
+      "width": 135,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "day over fossil fuels",
+      "x": 222,
+      "y": 556,
+      "width": 132,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "Delegations remained divided over",
+      "x": 222,
+      "y": 573,
+      "width": 177,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "transition timelines and climate",
+      "x": 222,
+      "y": 585,
+      "width": 161,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "finance commitments for",
+      "x": 222,
+      "y": 596,
+      "width": 125,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "developing economies. (UN News,",
+      "x": 222,
+      "y": 608,
+      "width": 171,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Reuters)",
+      "x": 222,
+      "y": 619,
+      "width": 45,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "POLAND: MISSILE",
+      "x": 428,
+      "y": 486,
+      "width": 77,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Alert · AP",
+      "x": 553,
+      "y": 513,
+      "width": 43,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "6",
+      "x": 424,
+      "y": 530,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "SE POLAND · EUROPE",
+      "x": 440,
+      "y": 530,
+      "width": 96,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Russian missile crashes",
+      "x": 420,
+      "y": 542,
+      "width": 146,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "in southern Poland",
+      "x": 420,
+      "y": 556,
+      "width": 116,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "A Russian cruise missile crashed in",
+      "x": 420,
+      "y": 573,
+      "width": 183,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "southeastern Poland while",
+      "x": 420,
+      "y": 585,
+      "width": 138,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "thousands of European troops",
+      "x": 420,
+      "y": 596,
+      "width": 160,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "conducted military exercises in the",
+      "x": 420,
+      "y": 608,
+      "width": 184,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "region. (AP, Reuters)",
+      "x": 420,
+      "y": 619,
+      "width": 111,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "IRAQ: FORCES IN",
+      "x": 626,
+      "y": 486,
+      "width": 77,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Deployed · The National",
+      "x": 691,
+      "y": 513,
+      "width": 103,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "7",
+      "x": 622,
+      "y": 530,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "JURF AL-SAKHAR · IRAQ",
+      "x": 638,
+      "y": 530,
+      "width": 110,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Iraqi forces enter Jurf",
+      "x": 618,
+      "y": 542,
+      "width": 147,
+      "height": 14,
+      "capHeight": 11
+    },
+    {
+      "text": "al-Sakhar stronghold",
+      "x": 618,
+      "y": 556,
+      "width": 130,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "Prime Minister Ali al-Zaidi",
+      "x": 618,
+      "y": 573,
+      "width": 131,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "established a joint command to",
+      "x": 618,
+      "y": 585,
+      "width": 162,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "restore state authority and halt",
+      "x": 618,
+      "y": 596,
+      "width": 172,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "illicit pipeline oil smuggling. (The",
+      "x": 618,
+      "y": 608,
+      "width": 169,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "National, Crisis Group)",
+      "x": 618,
+      "y": 619,
+      "width": 118,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "EUROPE: STRIKES",
+      "x": 824,
+      "y": 486,
+      "width": 81,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "STRIKE",
+      "x": 926,
+      "y": 497,
+      "width": 33,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Marches · Al Jazeera",
+      "x": 900,
+      "y": 513,
+      "width": 92,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "8",
+      "x": 820,
+      "y": 530,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "ROME · EUROPE",
+      "x": 836,
+      "y": 530,
+      "width": 69,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Workers and students",
+      "x": 816,
+      "y": 542,
+      "width": 135,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "strike across Europe",
+      "x": 816,
+      "y": 556,
+      "width": 131,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "Protesters demanded higher wages",
+      "x": 816,
+      "y": 573,
+      "width": 182,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "and stronger housing and",
+      "x": 816,
+      "y": 585,
+      "width": 133,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "education funding instead of",
+      "x": 816,
+      "y": 596,
+      "width": 148,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "increased military spending. (Al",
+      "x": 816,
+      "y": 608,
+      "width": 162,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Jazeera, Reuters)",
+      "x": 816,
+      "y": 619,
+      "width": 96,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "JAPAN: +2.3%",
+      "x": 32,
+      "y": 642,
+      "width": 61,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Official data · Reuters",
+      "x": 103,
+      "y": 669,
+      "width": 97,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "9",
+      "x": 28,
+      "y": 686,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "TOKYO · ASIA-PACIFIC",
+      "x": 44,
+      "y": 686,
+      "width": 103,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Japan headline",
+      "x": 24,
+      "y": 698,
+      "width": 91,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "inflation rises to 2.3%",
+      "x": 24,
+      "y": 712,
+      "width": 140,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "Core inflation ticked up to 2.2%,",
+      "x": 24,
+      "y": 729,
+      "width": 171,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "keeping pressure on the Bank of",
+      "x": 24,
+      "y": 741,
+      "width": 173,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Japan ahead of next month's rate",
+      "x": 24,
+      "y": 752,
+      "width": 180,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "decision. (Reuters, Briefs Finance)",
+      "x": 24,
+      "y": 764,
+      "width": 181,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "KENYA: OIL WELL",
+      "x": 230,
+      "y": 642,
+      "width": 76,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Drilling · allAfrica",
+      "x": 322,
+      "y": 669,
+      "width": 76,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "10",
+      "x": 224,
+      "y": 686,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "TURKANA · AFRICA",
+      "x": 242,
+      "y": 686,
+      "width": 85,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Kenya starts drilling",
+      "x": 222,
+      "y": 698,
+      "width": 128,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "first Turkana oil well",
+      "x": 222,
+      "y": 712,
+      "width": 133,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "Kenya switched on drilling",
+      "x": 222,
+      "y": 729,
+      "width": 136,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "operations for its first commercial",
+      "x": 222,
+      "y": 741,
+      "width": 180,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "oil well in Turkana's South",
+      "x": 222,
+      "y": 752,
+      "width": 140,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Lokichar basin. (allAfrica,",
+      "x": 222,
+      "y": 764,
+      "width": 134,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "IntelliNews)",
+      "x": 222,
+      "y": 775,
+      "width": 62,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "BUKELE: 3RD BID",
+      "x": 428,
+      "y": 642,
+      "width": 78,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Filed · AP",
+      "x": 554,
+      "y": 669,
+      "width": 42,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "11",
+      "x": 423,
+      "y": 686,
+      "width": 7,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "SAN SALVADOR · AMERICAS",
+      "x": 440,
+      "y": 686,
+      "width": 124,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "El Salvador's Bukele",
+      "x": 420,
+      "y": 698,
+      "width": 131,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "files for third term",
+      "x": 420,
+      "y": 712,
+      "width": 120,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "Salvadoran President Nayib Bukele",
+      "x": 420,
+      "y": 729,
+      "width": 184,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "formally registered his candidacy",
+      "x": 420,
+      "y": 741,
+      "width": 174,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "to seek a third presidential term.",
+      "x": 420,
+      "y": 752,
+      "width": 174,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "(AP, FDD)",
+      "x": 420,
+      "y": 764,
+      "width": 53,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "US: ARCH HALTED",
+      "x": 626,
+      "y": 642,
+      "width": 80,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Court order · NPR",
+      "x": 716,
+      "y": 669,
+      "width": 78,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "12",
+      "x": 620,
+      "y": 686,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "WASHINGTON · AMERICAS",
+      "x": 638,
+      "y": 686,
+      "width": 113,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Second federal judge",
+      "x": 618,
+      "y": 698,
+      "width": 131,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "blocks Trump arch plan",
+      "x": 618,
+      "y": 712,
+      "width": 146,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "A second U.S. federal judge issued",
+      "x": 618,
+      "y": 729,
+      "width": 183,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "an order halting President Donald",
+      "x": 618,
+      "y": 741,
+      "width": 178,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Trump's proposed triumphal arch",
+      "x": 618,
+      "y": 752,
+      "width": 170,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "monument in Washington. (NPR, AP)",
+      "x": 618,
+      "y": 764,
+      "width": 183,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "RIYADH: 5 DRONES",
+      "x": 824,
+      "y": 642,
+      "width": 85,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Intercepted · AP",
+      "x": 920,
+      "y": 669,
+      "width": 72,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "13",
+      "x": 818,
+      "y": 686,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "RIYADH · MIDDLE EAST",
+      "x": 836,
+      "y": 686,
+      "width": 104,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Saudi coalition intercepts",
+      "x": 816,
+      "y": 698,
+      "width": 158,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "drones over Riyadh",
+      "x": 816,
+      "y": 712,
+      "width": 121,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "Saudi air defenses intercepted",
+      "x": 816,
+      "y": 729,
+      "width": 160,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "five Houthi drones and one",
+      "x": 816,
+      "y": 741,
+      "width": 142,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "ballistic missile aimed toward",
+      "x": 816,
+      "y": 752,
+      "width": 150,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Riyadh and southern border",
+      "x": 816,
+      "y": 764,
+      "width": 145,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "facilities. (AP)",
+      "x": 816,
+      "y": 775,
+      "width": 74,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "WHERE IT HAPPENED",
+      "x": 24,
+      "y": 795,
+      "width": 112,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "1",
+      "x": 245,
+      "y": 840,
+      "width": 3,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "2",
+      "x": 300,
+      "y": 868,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "3",
+      "x": 338,
+      "y": 863,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "4",
+      "x": 216,
+      "y": 840,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "5",
+      "x": 260,
+      "y": 852,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "6",
+      "x": 235,
+      "y": 825,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "7",
+      "x": 258,
+      "y": 872,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "8",
+      "x": 225,
+      "y": 864,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "9",
+      "x": 356,
+      "y": 854,
+      "width": 5,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "10",
+      "x": 246,
+      "y": 898,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "11",
+      "x": 119,
+      "y": 873,
+      "width": 7,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "12",
+      "x": 130,
+      "y": 851,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "13",
+      "x": 274,
+      "y": 863,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "14",
+      "x": 207,
+      "y": 856,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "15",
+      "x": 112,
+      "y": 859,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "16",
+      "x": 88,
+      "y": 855,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Each number matches the story pin on this page.",
+      "x": 24,
+      "y": 952,
+      "width": 214,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "ATP: $350M+ PAY",
+      "x": 428,
+      "y": 800,
+      "width": 81,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "$350M+",
+      "x": 552,
+      "y": 811,
+      "width": 35,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Approved · Anadolu",
+      "x": 512,
+      "y": 827,
+      "width": 84,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "14",
+      "x": 422,
+      "y": 844,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "TURIN · WORLD",
+      "x": 440,
+      "y": 844,
+      "width": 66,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "ATP backs plan to lift",
+      "x": 420,
+      "y": 856,
+      "width": 142,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "player pay past $350m",
+      "x": 420,
+      "y": 870,
+      "width": 148,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "The Association of Tennis",
+      "x": 420,
+      "y": 887,
+      "width": 135,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Professionals approved a global",
+      "x": 420,
+      "y": 899,
+      "width": 171,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "tour reform plan in Turin aimed at",
+      "x": 420,
+      "y": 910,
+      "width": 179,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "lifting total player compensation",
+      "x": 420,
+      "y": 922,
+      "width": 171,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "past $350 million. (Anadolu,",
+      "x": 420,
+      "y": 933,
+      "width": 148,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Reuters)",
+      "x": 420,
+      "y": 945,
+      "width": 45,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "ISS: DRAGON UNDOCKS",
+      "x": 626,
+      "y": 800,
+      "width": 103,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Confirmed · NASA",
+      "x": 719,
+      "y": 827,
+      "width": 75,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "15",
+      "x": 620,
+      "y": 844,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "ORBIT · SCIENCE",
+      "x": 638,
+      "y": 844,
+      "width": 77,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "SpaceX Dragon undocks",
+      "x": 618,
+      "y": 856,
+      "width": 149,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "from space station",
+      "x": 618,
+      "y": 870,
+      "width": 117,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "A SpaceX Dragon cargo",
+      "x": 618,
+      "y": 887,
+      "width": 124,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "spacecraft undocked from the",
+      "x": 618,
+      "y": 899,
+      "width": 159,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "International Space Station",
+      "x": 618,
+      "y": 910,
+      "width": 145,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "carrying scientific experiments and",
+      "x": 618,
+      "y": 922,
+      "width": 182,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "research samples back to Earth.",
+      "x": 618,
+      "y": 933,
+      "width": 172,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "(NASA)",
+      "x": 618,
+      "y": 945,
+      "width": 37,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "NASA: OUTER ICE",
+      "x": 824,
+      "y": 800,
+      "width": 79,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "Study · NASA",
+      "x": 934,
+      "y": 827,
+      "width": 58,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "16",
+      "x": 818,
+      "y": 844,
+      "width": 9,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "OUTER SOLAR SYSTEM · SCIENCE",
+      "x": 836,
+      "y": 844,
+      "width": 152,
+      "height": 7,
+      "capHeight": 7
+    },
+    {
+      "text": "NASA finds clues to",
+      "x": 816,
+      "y": 856,
+      "width": 128,
+      "height": 11,
+      "capHeight": 11
+    },
+    {
+      "text": "ancient ice past Neptune",
+      "x": 816,
+      "y": 870,
+      "width": 155,
+      "height": 13,
+      "capHeight": 11
+    },
+    {
+      "text": "Planetary scientists at NASA",
+      "x": 816,
+      "y": 887,
+      "width": 154,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "reported new spectroscopic",
+      "x": 816,
+      "y": 899,
+      "width": 145,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "evidence of ancient subsurface ice",
+      "x": 816,
+      "y": 910,
+      "width": 184,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "reservoirs on distant objects",
+      "x": 816,
+      "y": 922,
+      "width": 155,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "orbiting beyond Neptune. (NASA)",
+      "x": 816,
+      "y": 933,
+      "width": 170,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "DATE CHECK",
+      "x": 31,
+      "y": 974,
+      "width": 67,
+      "height": 9,
+      "capHeight": 9
+    },
+    {
+      "text": "Left out as Thursday 19 November's news: the three-leader declaration in Shenzhen, the World Court's ruling on Myanmar, Tonga's drought emergency, and the",
+      "x": 116,
+      "y": 970,
+      "width": 849,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "migrant boat off Senegal.",
+      "x": 116,
+      "y": 980,
+      "width": 133,
+      "height": 10,
+      "capHeight": 9
+    },
+    {
+      "text": "Every story happened, or was first reported, on Friday 20 November 2026. Officials' counts are attributed.",
+      "x": 24,
+      "y": 999,
+      "width": 478,
+      "height": 8,
+      "capHeight": 7
+    },
+    {
+      "text": "Sources named beside each story · Original procedural drawings",
+      "x": 721,
+      "y": 999,
+      "width": 279,
+      "height": 8,
+      "capHeight": 7
+    }
+  ]
+}

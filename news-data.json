@@ -1,44 +1,221 @@
 {
+  "date": "FRIDAY 20 NOVEMBER 2026",
   "masthead": "Friday 20 November 2026",
+  "kicker": "THE WORLD IN ONE DAY",
+  "edition": "16 STORIES · 7 REGIONS · EVERY ONE DATED FRIDAY 20 NOVEMBER 2026",
   "subhead": "Russian missiles hit Kyiv's bridges · Cyclone Akvan slams eastern India · AI sell-off sinks Asia's markets · UK and EU seal a deal",
-  "stats": [
-    { "val": "3", "label": "Kyiv bridges struck by Russian missiles" },
-    { "val": "300,000+", "label": "people evacuated ahead of Cyclone Akvan" },
-    { "val": "-5.6%", "label": "Taiwan stock index drop in AI sell-off" },
-    { "val": "2.3%", "label": "Japan annual consumer inflation rate" },
-    { "val": "$6B", "label": "Kenya South Lokichar oil project value" },
-    { "val": "5", "label": "Houthi drones intercepted by Saudi defenses" }
+  "kpis": [
+    { "value": "3", "label": "Kyiv bridges struck by Russian missiles" },
+    { "value": "300,000+", "label": "people evacuated ahead of Cyclone Akvan" },
+    { "value": "-5.6%", "label": "Taiwan stock index drop in AI sell-off" },
+    { "value": "2.3%", "label": "Japan annual consumer inflation rate" },
+    { "value": "$6B", "label": "Kenya South Lokichar oil project value" },
+    { "value": "5", "label": "Houthi drones intercepted by Saudi defenses" }
   ],
   "regions": [
-    { "text": "EUROPE 4", "color": "#3f51b5" },
-    { "text": "ASIA-PACIFIC 3", "color": "#c62828" },
-    { "text": "WORLD 2", "color": "#455a64" },
-    { "text": "MIDDLE EAST 2", "color": "#f9a825" },
-    { "text": "AMERICAS 2", "color": "#1976d2" },
-    { "text": "SCIENCE 2", "color": "#7b1fa2" },
-    { "text": "AFRICA 1", "color": "#388e3c" }
-  ],
-  "heroes": [
-    { "region": "KYIV, UKRAINE · WAR", "title": "Russian Missiles Hit Kyiv's Bridges, Cutting Dnipro Crossings", "body": "Three strategic bridges across the Dnipro river struck in early morning raids; emergency services report heavy structural damage and transport disruptions." },
-    { "region": "ODISHA, INDIA · CYCLONE", "title": "Cyclone Akvan Slams Eastern India With 140 km/h Winds", "body": "Category 3 storm makes landfall near Puri, bringing torrential storm surges and widespread blackouts; 300,000 evacuated." },
-    { "region": "TAIPEI · SEOUL · TOKYO · MARKETS", "title": "AI Stock Sell-Off Sinks Asian Tech Markets in Friday Rout", "body": "Heavy losses across Taiwan, South Korea, and Japan as major chipmakers and AI hardware suppliers suffer sharp valuation cuts." }
-  ],
-  "grid": [
-    { "region": "UK · EU", "tag": "UK-EU DEAL: NEW ACCORD SEALED", "color": "#3f51b5", "body": "London and Brussels sign post-Brexit security and trade pact in Brussels." },
-    { "region": "GENEVA · CLIMATE", "tag": "COP31 CLIMATE TALKS STALL WITHOUT DEAL", "color": "#388e3c", "body": "Final day negotiations break down over emissions financing targets." },
-    { "region": "PRZEWODÓW · SECURITY", "tag": "POLAND TRACKS MISSILE NEAR BORDER", "color": "#c62828", "body": "Air defense systems triggered by stray rocket trajectory near Ukraine border." },
-    { "region": "TOKYO · ECONOMY", "tag": "JAPAN INFLATION RISES TO 2.3%", "color": "#1976d2", "body": "Tokyo CPI climbs as household spending and fuel costs push the annual rate higher." },
-    { "region": "BAGHDAD · DEFENSE", "tag": "IRAQI FORCES REINFORCE BORDER", "color": "#f9a825", "body": "Armored units deployed to western desert outposts citing regional security." },
-    { "region": "ROME · LABOR", "tag": "GENERAL STRIKE PARALYZES ITALY", "color": "#7b1fa2", "body": "Transit, health, and school workers strike over budget cuts and wages." },
-    { "region": "TURKANA · ENERGY", "tag": "KENYA OIL PROJECT ADVANCES", "color": "#388e3c", "body": "South Lokichar exploration clears final drilling permits for the $8B field." },
-    { "region": "SAN SALVADOR · POLITICS", "tag": "BUKELÉ FILES THIRD-TERM BID", "color": "#c62828", "body": "El Salvador president formally registers candidacy for 2029 re-election." },
-    { "region": "WASHINGTON · LAW", "tag": "TRUMP BORDER ARCH ORDER HALTED", "color": "#1976d2", "body": "Federal judge blocks emergency funding use for commemorative monument." },
-    { "region": "JIZRAH · DEFENSE", "tag": "SAUDI DEFENSES INTERCEPT 5 DRONES", "color": "#c62828", "body": "Air defense systems destroy unmanned aircraft launched toward western areas." }
+    { "name": "Europe", "count": 4, "color": "#1E3A5F", "width": 244 },
+    { "name": "Asia-Pacific", "count": 3, "color": "#8B1E24", "width": 183 },
+    { "name": "World", "count": 2, "color": "#374151", "width": 122 },
+    { "name": "Middle East", "count": 2, "color": "#9A5B13", "width": 122 },
+    { "name": "Americas", "count": 2, "color": "#155E75", "width": 122 },
+    { "name": "Science", "count": 2, "color": "#4338CA", "width": 122 },
+    { "name": "Africa", "count": 1, "color": "#166534", "width": 61 }
   ],
   "stories": [
-    { "tag": "TURIN · WORLD", "title": "ATP Approves $350M+ Player Pay", "body": "Men's tennis tours seal record prize pool expansion starting next season.", "color": "#388e3c" },
-    { "tag": "ORBIT · SCIENCE", "title": "Dragon Undocks From Space Station", "body": "SpaceX Crew capsule departs ISS carrying return samples and data.", "color": "#1976d2" },
-    { "tag": "OUTER SOLAR SYSTEM · SCIENCE", "title": "NASA Detects New Neptune Ice Belt", "body": "Deep space survey maps icy trans-Neptunian objects past orbital rim.", "color": "#7b1fa2" }
+    {
+      "id": 1, "hero": true, "region": "Europe",
+      "title": "Russian missiles hit three Kyiv bridges",
+      "sentences": [
+        "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others.",
+        "Mayor Vitali Klitschko closed damaged river crossings to private traffic while parts of the capital lost power, heat, and water."
+      ],
+      "source": "(Kyiv Independent, BBC)",
+      "pin": { "place": "Kyiv", "lat": 50.45, "lon": 30.52 },
+      "kicker": "KYIV, UKRAINE · WAR",
+      "art": { "title": "KYIV", "subtitle": "3 bridges hit", "status": "Officials' count" }
+    },
+    {
+      "id": 2, "hero": true, "region": "Asia-Pacific",
+      "title": "Cyclone Akvan slams eastern India coast",
+      "sentences": [
+        "Severe Cyclonic Storm Akvan made landfall near Gopalpur in Odisha around 8 am with sustained winds of 70 to 90 km/h.",
+        "Authorities evacuated more than 300,000 residents into 9,341 shelters and deployed 423 rescue teams across vulnerable coastal districts."
+      ],
+      "source": "(IMD, DD News)",
+      "pin": { "place": "Gopalpur", "lat": 19.27, "lon": 84.87 },
+      "kicker": "ODISHA, INDIA · CYCLONE",
+      "art": { "title": "CYCLONE AKVAN", "subtitle": "Landfall · 8 am", "status": "Weather office" }
+    },
+    {
+      "id": 3, "hero": true, "region": "Asia-Pacific",
+      "title": "AI stock sell-off sinks Asian markets",
+      "sentences": [
+        "Technology and chipmaking shares tumbled across Asia as investors pulled back from high-valuation artificial intelligence stocks.",
+        "Taiwan's benchmark index fell 5.6%, South Korea's KOSPI dropped 5.3%, and Japan's Nikkei 225 lost 4.8%."
+      ],
+      "source": "(Reuters, LGT)",
+      "pin": { "place": "Taipei", "lat": 25.03, "lon": 121.56 },
+      "kicker": "TAIPEI · SEOUL · TOKYO · MARKETS",
+      "art": { "title": "AI SELL-OFF", "subtitle": "Asia, Friday's close", "status": "Closing prices" }
+    },
+    {
+      "id": 4, "hero": false, "region": "Europe",
+      "title": "UK and EU seal Brussels reset summit deal",
+      "sentences": [
+        "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels.",
+        "The agreement expands cooperation on maritime defense, hybrid threat intelligence, irregular migration, and youth educational exchanges."
+      ],
+      "source": "(EU Council, Reuters)",
+      "pin": { "place": "Brussels", "lat": 50.85, "lon": 4.35 },
+      "kicker": "BRUSSELS · EUROPE",
+      "art": { "title": "UK-EU DEAL", "status": "Agreed · EU Council" }
+    },
+    {
+      "id": 5, "hero": false, "region": "World",
+      "title": "COP31 stalls on final day over fossil fuels",
+      "sentences": [
+        "Climate negotiations at COP31 in Antalya entered their scheduled final day without consensus after oil-producing nations opposed explicit fossil fuel phase-out wording.",
+        "Delegations remained divided over transition timelines and climate finance commitments for developing economies."
+      ],
+      "source": "(UN News, Reuters)",
+      "pin": { "place": "Antalya", "lat": 36.88, "lon": 30.69 },
+      "kicker": "ANTALYA · WORLD",
+      "art": { "title": "COP31: NO DEAL", "status": "Final day · UN News" }
+    },
+    {
+      "id": 6, "hero": false, "region": "Europe",
+      "title": "Russian missile crashes in southern Poland",
+      "sentences": [
+        "A Russian cruise missile crashed in southeastern Poland while thousands of European troops conducted military exercises in the region.",
+        "Polish officials condemned the incident as an intentional provocation and placed regional air defenses on heightened alert."
+      ],
+      "source": "(AP, Reuters)",
+      "pin": { "place": "SE Poland", "lat": 50.10, "lon": 22.00 },
+      "kicker": "SE POLAND · EUROPE",
+      "art": { "title": "POLAND: MISSILE", "status": "Alert · AP" }
+    },
+    {
+      "id": 7, "hero": false, "region": "Middle East",
+      "title": "Iraqi forces enter Jurf al-Sakhar stronghold",
+      "sentences": [
+        "Iraqi army units and federal police deployed armored vehicles into Jurf al-Sakhar southwest of Baghdad under a security compromise with Kataib Hezbollah.",
+        "Prime Minister Ali al-Zaidi established a joint command to restore state authority and halt illicit pipeline oil smuggling."
+      ],
+      "source": "(The National, Crisis Group)",
+      "pin": { "place": "Jurf al-Sakhar", "lat": 32.85, "lon": 44.22 },
+      "kicker": "JURF AL-SAKHAR · IRAQ",
+      "art": { "title": "IRAQ: FORCES IN", "status": "Deployed · The National" }
+    },
+    {
+      "id": 8, "hero": false, "region": "Europe",
+      "title": "Workers and students strike across Europe",
+      "sentences": [
+        "Labor unions and university students staged coordinated strikes and street marches across Italy and Croatia over rising living costs and public budget priorities.",
+        "Protesters demanded higher wages and stronger housing and education funding instead of increased military spending."
+      ],
+      "source": "(Al Jazeera, Reuters)",
+      "pin": { "place": "Rome", "lat": 41.90, "lon": 12.50 },
+      "kicker": "ROME · EUROPE",
+      "art": { "title": "EUROPE: STRIKES", "status": "Marches · Al Jazeera" }
+    },
+    {
+      "id": 9, "hero": false, "region": "Asia-Pacific",
+      "title": "Japan headline inflation rises to 2.3%",
+      "sentences": [
+        "Government data showed Japan's headline consumer inflation accelerated to 2.3% following the expiration of household energy subsidies and higher fuel costs.",
+        "Core inflation ticked up to 2.2%, keeping pressure on the Bank of Japan ahead of next month's rate decision."
+      ],
+      "source": "(Reuters, Briefs Finance)",
+      "pin": { "place": "Tokyo", "lat": 35.68, "lon": 139.69 },
+      "kicker": "TOKYO · ASIA-PACIFIC",
+      "art": { "title": "JAPAN: +2.3%", "status": "Official data · Reuters" }
+    },
+    {
+      "id": 10, "hero": false, "region": "Africa",
+      "title": "Kenya starts drilling first Turkana oil well",
+      "sentences": [
+        "Kenya switched on drilling operations for its first commercial oil well in Turkana's South Lokichar basin.",
+        "The $6 billion energy project aims to deliver first crude production early next month."
+      ],
+      "source": "(allAfrica, IntelliNews)",
+      "pin": { "place": "South Lokichar", "lat": 2.90, "lon": 34.60 },
+      "kicker": "TURKANA · AFRICA",
+      "art": { "title": "KENYA: OIL WELL", "status": "Drilling · allAfrica" }
+    },
+    {
+      "id": 11, "hero": false, "region": "Americas",
+      "title": "El Salvador's Bukele files for third term",
+      "sentences": [
+        "Salvadoran President Nayib Bukele formally registered his candidacy to seek a third presidential term.",
+        "The filing came as his administration simultaneously expanded overseas security deployments to combat gang violence in Haiti."
+      ],
+      "source": "(AP, FDD)",
+      "pin": { "place": "San Salvador", "lat": 13.69, "lon": -89.22 },
+      "kicker": "SAN SALVADOR · AMERICAS",
+      "art": { "title": "BUKELE: 3RD BID", "status": "Filed · AP" }
+    },
+    {
+      "id": 12, "hero": false, "region": "Americas",
+      "title": "Second federal judge blocks Trump arch plan",
+      "sentences": [
+        "A second U.S. federal judge issued an order halting President Donald Trump's proposed triumphal arch monument in Washington.",
+        "The court ruled that legal challenges against the project's approval process are likely to succeed."
+      ],
+      "source": "(NPR, AP)",
+      "pin": { "place": "Washington", "lat": 38.90, "lon": -77.00 },
+      "kicker": "WASHINGTON · AMERICAS",
+      "art": { "title": "US: ARCH HALTED", "status": "Court order · NPR" }
+    },
+    {
+      "id": 13, "hero": false, "region": "Middle East",
+      "title": "Saudi coalition intercepts drones over Riyadh",
+      "sentences": [
+        "Saudi air defenses intercepted five Houthi drones and one ballistic missile aimed toward Riyadh and southern border facilities.",
+        "The Saudi-led coalition responded with airstrikes targeting Houthi missile and smuggling sites in Sanaa and Hodeidah."
+      ],
+      "source": "(AP)",
+      "pin": { "place": "Riyadh", "lat": 24.71, "lon": 46.67 },
+      "kicker": "RIYADH · MIDDLE EAST",
+      "art": { "title": "RIYADH: 5 DRONES", "status": "Intercepted · AP" }
+    },
+    {
+      "id": 14, "hero": false, "region": "World",
+      "title": "ATP backs plan to lift player pay past $350m",
+      "sentences": [
+        "The Association of Tennis Professionals approved a global tour reform plan in Turin aimed at lifting total player compensation past $350 million.",
+        "The package expands revenue sharing and minimum earnings guarantees for lower-ranked players competing across international circuits."
+      ],
+      "source": "(Anadolu, Reuters)",
+      "pin": { "place": "Turin", "lat": 45.07, "lon": 7.68 },
+      "kicker": "TURIN · WORLD",
+      "art": { "title": "ATP: $350M+ PAY", "status": "Approved · Anadolu" }
+    },
+    {
+      "id": 15, "hero": false, "region": "Science",
+      "title": "SpaceX Dragon undocks from space station",
+      "sentences": [
+        "A SpaceX Dragon cargo spacecraft undocked from the International Space Station carrying scientific experiments and research samples back to Earth.",
+        "NASA flight controllers confirmed a clean separation as the capsule began its return trajectory."
+      ],
+      "source": "(NASA)",
+      "pin": { "place": "Houston", "lat": 29.56, "lon": -95.09 },
+      "kicker": "ORBIT · SCIENCE",
+      "art": { "title": "ISS: DRAGON UNDOCKS", "status": "Confirmed · NASA" }
+    },
+    {
+      "id": 16, "hero": false, "region": "Science",
+      "title": "NASA finds clues to ancient ice past Neptune",
+      "sentences": [
+        "Planetary scientists at NASA reported new spectroscopic evidence of ancient subsurface ice reservoirs on distant objects orbiting beyond Neptune.",
+        "The findings shed light on how water and volatile compounds survived in the outer solar system."
+      ],
+      "source": "(NASA)",
+      "pin": { "place": "Pasadena", "lat": 34.15, "lon": -118.13 },
+      "kicker": "OUTER SOLAR SYSTEM · SCIENCE",
+      "art": { "title": "NASA: OUTER ICE", "status": "Study · NASA" }
+    }
   ],
-  "dateCheck": "Left out as Thursday 19 November's news: the three-leader declaration in Shenzhen, the World Court's ruling on Myanmar, Tonga's drought emergency, and the migrant boat off Senegal."
+  "dateCheck": "Left out as Thursday 19 November's news: the three-leader declaration in Shenzhen, the World Court's ruling on Myanmar, Tonga's drought emergency, and the migrant boat off Senegal.",
+  "footerLeft": "Every story happened, or was first reported, on Friday 20 November 2026. Officials' counts are attributed.",
+  "footerRight": "Sources named beside each story · Original procedural drawings"
 }

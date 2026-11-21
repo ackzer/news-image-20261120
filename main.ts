@@ -1,385 +1,289 @@
-// Stage 1 only: a newly authored font specimen, not the newspaper layout.
-// Every lit glyph cell is a solid rectangle. No fonts, atlases or packages.
+// Full newspaper build, using the font approved in this same session.
+// No packages, network, external assets, random values, or clock-based content.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { deflateSync, inflateSync } from "node:zlib";
+import { measure, paragraphMetrics } from "./typeface.ts";
+import { Raster, encodePNG, inspectPNG } from "./raster.ts";
+import { illustrate } from "./illustrations.ts";
+import { drawWorldMap } from "./world-map.ts";
 
 const started = process.hrtime.bigint();
-const W = 1024;
-const H = 1024;
-const C = {
-  paper: "#F6F3EC", ink: "#141414", body: "#262626",
-  source: "#525252", rule: "#C8C2B6", accent: "#8B1E24",
-};
+const root = dirname(fileURLToPath(import.meta.url));
+const data = JSON.parse(readFileSync(join(root, "news-data.json"), "utf8"));
+const sha = value => createHash("sha256").update(value).digest("hex");
+const contentSha256 = sha(JSON.stringify(data));
+const P = { paper: "#F6F3EC", ink: "#141414", body: "#262626", source: "#525252", line: "#C8C2B6", red: "#8B1E24", negative: "#DC2626", white: "#FFFFFF" };
+const image = new Raster(1024, 1024, P.paper);
+const page = { x: 24, y: 16, width: 976, height: 994 };
+const boxes = [];
+const summaries = [];
+const headlines = [];
+const storiesDrawn = [];
+const illustrationIds = [];
+const colors = new Map(data.regions.map(region => [region.name, region.color]));
 
-// Hand-entered rows, not an imported font or an encoded image atlas.
-// Capitals occupy seven rows. Lowercase descenders may use an eighth row.
-// Empty side columns are removed when the character is registered.
-const drawings = {
-  A: "01110/10001/10001/11111/10001/10001/10001",
-  B: "11110/10001/10001/11110/10001/10001/11110",
-  C: "01111/10000/10000/10000/10000/10000/01111",
-  D: "11110/10001/10001/10001/10001/10001/11110",
-  E: "11111/10000/10000/11110/10000/10000/11111",
-  F: "11111/10000/10000/11110/10000/10000/10000",
-  G: "01111/10000/10000/10111/10001/10001/01111",
-  H: "10001/10001/10001/11111/10001/10001/10001",
-  I: "111/010/010/010/010/010/111",
-  J: "00111/00010/00010/00010/10010/10010/01100",
-  K: "10001/10010/10100/11000/10100/10010/10001",
-  L: "1000/1000/1000/1000/1000/1000/1111",
-  M: "10001/11011/10101/10101/10001/10001/10001",
-  N: "10001/11001/11001/10101/10011/10011/10001",
-  O: "01110/10001/10001/10001/10001/10001/01110",
-  P: "11110/10001/10001/11110/10000/10000/10000",
-  Q: "01110/10001/10001/10001/10101/10010/01101",
-  R: "11110/10001/10001/11110/10100/10010/10001",
-  S: "01111/10000/10000/01110/00001/00001/11110",
-  T: "11111/00100/00100/00100/00100/00100/00100",
-  U: "10001/10001/10001/10001/10001/10001/01110",
-  V: "10001/10001/10001/10001/01010/01010/00100",
-  W: "10001/10001/10001/10101/10101/11011/10001",
-  X: "10001/10001/01010/00100/01010/10001/10001",
-  Y: "10001/10001/01010/00100/00100/00100/00100",
-  Z: "11111/00001/00010/00100/01000/10000/11111",
-  a: "0000/0000/0110/0001/0111/1001/0111",
-  b: "1000/1000/1110/1001/1001/1001/1110",
-  c: "0000/0000/0111/1000/1000/1000/0111",
-  d: "0001/0001/0111/1001/1001/1001/0111",
-  e: "0000/0000/0110/1001/1111/1000/0111",
-  f: "011/100/100/110/100/100/100",
-  g: "0000/0000/0111/1001/0111/0001/1001/0110",
-  h: "1000/1000/1110/1001/1001/1001/1001",
-  i: "1/0/1/1/1/1/1",
-  j: "01/00/01/01/01/01/01/10",
-  k: "1000/1000/1001/1010/1100/1010/1001",
-  l: "10/10/10/10/10/10/01",
-  m: "00000/00000/11010/10101/10101/10101/10101",
-  n: "0000/0000/1110/1001/1001/1001/1001",
-  o: "0000/0000/0110/1001/1001/1001/0110",
-  p: "0000/0000/1110/1001/1110/1000/1000/1000",
-  q: "0000/0000/0111/1001/0111/0001/0001/0001",
-  r: "000/000/101/110/100/100/100",
-  s: "0000/0000/0111/1000/0110/0001/1110",
-  t: "010/010/111/010/010/010/001",
-  u: "0000/0000/1001/1001/1001/1001/0111",
-  v: "00000/00000/10001/10001/10001/01010/00100",
-  w: "00000/00000/10001/10001/10101/10101/01010",
-  x: "00000/00000/10001/01010/00100/01010/10001",
-  y: "0000/0000/1001/1001/0111/0001/1001/0110",
-  z: "0000/0000/1111/0001/0010/0100/1111",
-  "0": "01110/10001/10011/10101/11001/10001/01110",
-  "1": "010/110/010/010/010/010/111",
-  "2": "01110/10001/00001/00010/00100/01000/11111",
-  "3": "11110/00001/00001/01110/00001/00001/11110",
-  "4": "00010/00110/01010/10010/11111/00010/00010",
-  "5": "11111/10000/10000/11110/00001/00001/11110",
-  "6": "01110/10000/10000/11110/10001/10001/01110",
-  "7": "11111/00001/00010/00100/01000/01000/01000",
-  "8": "01110/10001/10001/01110/10001/10001/01110",
-  "9": "01110/10001/10001/01111/00001/00001/01110",
-  ".": "0/0/0/0/0/0/1",
-  ",": "00/00/00/00/00/01/01/10",
-  ":": "0/0/1/0/0/1/0",
-  ";": "00/00/01/00/00/01/01/10",
-  "'": "1/1/0/0/0/0/0",
-  '"': "101/101/000/000/000/000/000",
-  "-": "000/000/000/111/000/000/000",
-  "+": "00000/00100/00100/11111/00100/00100/00000",
-  "%": "11001/11010/00010/00100/01000/01011/10011",
-  "$": "00100/01111/10100/01110/00101/11110/00100",
-  "/": "00001/00010/00010/00100/01000/01000/10000",
-  "(": "001/010/100/100/100/010/001",
-  ")": "100/010/001/001/001/010/100",
-  "[": "11/10/10/10/10/10/11",
-  "]": "11/01/01/01/01/01/11",
-  "&": "01100/10010/10100/01000/10101/10010/01101",
-  "!": "1/1/1/1/1/0/1",
-  "?": "01110/10001/00001/00010/00100/00000/00100",
-  "=": "0000/0000/1111/0000/1111/0000/0000",
-  "#": "01010/01010/11111/01010/11111/01010/01010",
-  "*": "00000/10101/01110/11111/01110/10101/00000",
-  "·": "0/0/0/1/0/0/0",
-  "ó": "0001/0010/0110/1001/1001/1001/0110",
-  "é": "0001/0010/0110/1001/1111/1000/0111",
-  "–": "00000/00000/00000/11111/00000/00000/00000",
-  "—": "0000000/0000000/0000000/1111111/0000000/0000000/0000000",
-};
-
-const alphabet = new Map();
-for (const [character, drawing] of Object.entries(drawings)) {
-  let rows = drawing.split("/");
-  const columns = rows[0].length;
-  assert.ok(rows.length === 7 || rows.length === 8, `Bad height: ${character}`);
-  assert.ok(rows.every(row => row.length === columns && /^[01]+$/.test(row)));
-  const occupied = [...Array(columns).keys()].filter(x => rows.some(row => row[x] === "1"));
-  assert.ok(occupied.length > 0);
-  const left = occupied[0];
-  const right = occupied[occupied.length - 1] + 1;
-  rows = rows.map(row => row.slice(left, right));
-  alphabet.set(character, { rows, width: right - left });
-}
-alphabet.set(" ", { rows: [], width: 3 });
-
-function rgb(hex) {
-  assert.match(hex, /^#[0-9a-fA-F]{6}$/);
-  return [1, 3, 5].map(offset => parseInt(hex.slice(offset, offset + 2), 16));
+assert.equal(data.date, "FRIDAY 20 NOVEMBER 2026");
+assert.deepEqual(data.kpis.map(kpi => kpi.value), ["3", "300,000+", "-5.6%", "2.3%", "$6B", "5"]);
+assert.deepEqual(data.stories.map(story => story.id), Array.from({ length: 16 }, (_, i) => i + 1));
+assert.equal(data.regions.length, 7);
+assert.equal(data.regions.reduce((sum, region) => sum + region.width, 0), 976);
+for (const region of data.regions) assert.equal(data.stories.filter(story => story.region === region.name).length, region.count);
+for (const story of data.stories) {
+  assert.equal(story.sentences.length, 2);
+  assert.ok(story.sentences.every(sentence => sentence.endsWith(".") && !sentence.includes("\n")));
+  assert.ok(story.source.startsWith("(") && story.source.endsWith(")"));
 }
 
-const pixels = Buffer.alloc(W * H * 3);
-let paintedCells = 0;
-let paintedSourceCells = 0;
-function fill(x, y, width, height, ink) {
-  const left = Math.round(x);
-  const top = Math.round(y);
-  const right = Math.round(x + width);
-  const bottom = Math.round(y + height);
-  assert.ok(left >= 0 && top >= 0 && right <= W && bottom <= H, "Raster bounds exceeded");
-  assert.ok(right > left && bottom > top, "Empty cell");
-  for (let row = top; row < bottom; row++) {
-    let index = (row * W + left) * 3;
-    for (let column = left; column < right; column++) {
-      pixels[index++] = ink[0];
-      pixels[index++] = ink[1];
-      pixels[index++] = ink[2];
-    }
+function inBox(x, y, width, height, box, label) {
+  assert.ok(x >= box.x && y >= box.y && x + width <= box.x + box.width && y + height <= box.y + box.height, `Bounds: ${label}`);
+  assert.ok(x >= 0 && y >= 0 && x + width <= 1024 && y + height <= 1024, `Page overflow: ${label}`);
+}
+
+function text(value, x, y, capHeight = 9, ink = P.ink, box = page, tracking = 1, mutedAt = Infinity) {
+  const run = measure(value, capHeight, tracking);
+  x = Math.round(x); y = Math.round(y);
+  inBox(x, y, run.width, run.height, box, value);
+  const record = { text: value, x, y, width: run.width, height: run.height, capHeight };
+  for (const previous of boxes) {
+    assert.ok(!(x < previous.x + previous.width && x + run.width > previous.x && y < previous.y + previous.height && y + run.height > previous.y), `Text overlap: ${value} / ${previous.text}`);
   }
-}
-fill(0, 0, W, H, rgb(C.paper));
-
-function typeset(text, capHeight = 9, tracking = 1) {
-  assert.ok(capHeight >= 7 && tracking >= 1);
-  const unit = capHeight / 7;
-  const slots = [];
-  let pen = 0;
-  let height = 0;
-  for (const character of text) {
-    const glyph = alphabet.get(character);
-    assert.ok(glyph, `Missing glyph ${JSON.stringify(character)}`);
-    const width = Math.ceil(glyph.width * unit);
-    slots.push({ character, glyph, x: pen, width });
-    pen += width + tracking;
-    height = Math.max(height, Math.ceil(glyph.rows.length * unit));
-  }
-  for (let index = 1; index < slots.length; index++) {
-    const previous = slots[index - 1];
-    assert.ok(slots[index].x >= previous.x + previous.width + tracking, "Letter overlap");
-  }
-  return { slots, width: slots.length ? pen - tracking : 0, height, unit };
-}
-
-const textBoxes = [];
-function text(value, x, y, capHeight = 9, color = C.ink, tracking = 1, limit = 1000, mutedAt = Infinity) {
-  const run = typeset(value, capHeight, tracking);
-  x = Math.round(x);
-  y = Math.round(y);
-  assert.ok(x >= 24 && x + run.width <= limit, `Text exceeds column: ${value}`);
-  assert.ok(y >= 16 && y + run.height <= 1010, `Text exceeds page: ${value}`);
-  const ink = rgb(color);
-  const sourceInk = rgb(C.source);
-  for (const [characterIndex, slot] of run.slots.entries()) {
-    const isSource = characterIndex >= mutedAt;
-    const cellInk = isSource ? sourceInk : ink;
+  for (const [index, slot] of run.slots.entries()) {
+    const color = index >= mutedAt ? P.source : ink;
     slot.glyph.rows.forEach((row, dy) => {
       [...row].forEach((bit, dx) => {
-        if (bit !== "1") return;
-        fill(x + slot.x + dx * run.unit, y + dy * run.unit, run.unit, run.unit, cellInk);
-        paintedCells++;
-        if (isSource) paintedSourceCells++;
+        if (bit === "1") image.rect(x + slot.x + dx * run.unit, y + dy * run.unit, run.unit, run.unit, color);
       });
     });
   }
-  const box = { text: value, x, y, width: run.width, height: run.height };
-  for (const earlier of textBoxes) {
-    const intersects = x < earlier.x + earlier.width && x + run.width > earlier.x
-      && y < earlier.y + earlier.height && y + run.height > earlier.y;
-    assert.ok(!intersects, `Text boxes overlap: ${value} / ${earlier.text}`);
-  }
-  textBoxes.push(box);
-  return box;
+  boxes.push(record);
+  return record;
 }
 
-function wrap(value, width, capHeight = 9, tracking = 1) {
-  assert.ok(value.length > 0 && !/\s{2,}|^\s|\s$/.test(value), "Unexpected whitespace");
-  const lines = [];
-  let line = "";
-  for (const word of value.split(" ")) {
-    assert.ok(typeset(word, capHeight, tracking).width <= width, `Unbreakable word: ${word}`);
-    const candidate = line ? `${line} ${word}` : word;
-    if (typeset(candidate, capHeight, tracking).width <= width) {
-      line = candidate;
-    } else {
-      lines.push(line);
-      line = word;
-    }
-  }
-  lines.push(line);
-  assert.equal(lines.join(" "), value, "Wrapping changed locked content");
-  return lines;
+function center(value, y, height, ink = P.ink, box = page, tracking = 1) {
+  return text(value, box.x + Math.floor((box.width - measure(value, height, tracking).width) / 2), y, height, ink, box, tracking);
 }
-
-function paragraph(value, x, y, width, height, capHeight = 9, leading = 11.5) {
-  const lines = wrap(value, width, capHeight);
-  const sourceMarker = value.lastIndexOf(" (");
-  const sourceAt = sourceMarker < 0 ? Infinity : sourceMarker + 1;
+function paragraph(value, box, height = 9, leading = 11.5, ink = P.body, maxLines = Infinity, source = "") {
+  const metrics = paragraphMetrics(value, box.width, height, leading);
+  assert.ok(metrics.height <= box.height && metrics.lines.length <= maxLines, `Paragraph overflow: ${value}`);
+  const marker = source ? value.lastIndexOf(source) : -1;
   let consumed = 0;
-  let usedHeight = 0;
-  lines.forEach((line, index) => {
-    const top = Math.round(y + index * leading);
-    const box = text(line, x, top, capHeight, C.body, 1, x + width, sourceAt - consumed);
-    usedHeight = Math.max(usedHeight, top - y + box.height);
+  metrics.lines.forEach((line, index) => {
+    text(line, box.x, box.y + Math.round(index * leading), height, ink, box, 1, marker < 0 ? Infinity : marker - consumed);
     consumed += line.length + 1;
   });
-  assert.ok(usedHeight <= height, `Paragraph needs ${usedHeight}px, has ${height}px`);
-  return { lines: lines.length, height: usedHeight, width };
+  assert.equal(metrics.lines.join(" "), value);
+  return { lines: metrics.lines.length, height: metrics.height };
+}
+function headline(story, box, height, leading) {
+  // Refined after the first render: avoid single-word orphans such as "coast".
+  // Reflow only at spaces; neither the title nor its font size is changed.
+  const words = story.title.split(" ");
+  let lines = [story.title];
+  if (story.hero || measure(story.title, height).width > box.width) {
+    const candidates = [];
+    for (let index = 1; index < words.length; index++) {
+      const pair = [words.slice(0, index).join(" "), words.slice(index).join(" ")];
+      const widths = pair.map(line => measure(line, height).width);
+      if (widths.every(width => width <= box.width)) candidates.push({ pair, score: Math.abs(widths[0] - widths[1]) });
+    }
+    candidates.sort((a, b) => a.score - b.score);
+    assert.ok(candidates.length, `No two-line title fit: ${story.title}`);
+    lines = candidates[0].pair;
+  }
+  const usedHeight = Math.max(...lines.map((line, index) => Math.round(index * leading) + measure(line, height).height));
+  assert.ok(lines.length <= 2 && usedHeight <= box.height);
+  assert.equal(lines.join(" "), story.title);
+  lines.forEach((line, index) => text(line, box.x, box.y + Math.round(index * leading), height, P.ink, box));
+  headlines.push({ id: story.id, title: story.title, lines, capHeight: height, leading, box, usedHeight });
+}
+function rule(y, thickness = 1.5) { image.rect(24, y, 976, thickness, P.ink); }
+function plate(value, x, y, size, bg, fg, parent) {
+  const run = measure(value, size);
+  const width = run.width + 8; const height = run.height + 6;
+  inBox(x, y, width, height, parent, value);
+  image.rect(x, y, width, height, bg);
+  text(value, x + 4, y + 3, size, fg, parent);
+}
+function badge(id, cx, cy, color, radius = 7, parent = page) {
+  image.ellipse(cx, cy, radius, radius, color);
+  const value = String(id); const run = measure(value, 7);
+  text(value, cx - Math.ceil(run.width / 2), cy - 4, 7, P.white, parent);
 }
 
-function centered(value, y, capHeight, color = C.ink, tracking = 1, x = 24, width = 976) {
-  const measured = typeset(value, capHeight, tracking);
-  return text(value, x + Math.floor((width - measured.width) / 2), y, capHeight, color, tracking, x + width);
-}
-function label(value, y) { text(value, 24, y, 9, C.accent); }
-function rule(y) { fill(24, y, 976, 1, rgb(C.rule)); }
+// A — masthead. No substitute headlines or newly invented news copy.
+text(data.kicker, 24, 16, 9);
+text(data.edition, 1000 - measure(data.edition, 9).width, 16, 9);
+rule(35);
+center(data.masthead, 46, 44, P.ink, { x: 24, y: 40, width: 976, height: 64 }, 2);
+center(data.subhead, 110, 7);
+rule(128, 2); rule(132, 1);
 
-// These samples are verbatim selections from the user's locked content.
-const lockedHero = "Russian missiles hit three Kyiv bridges";
-const lockedSummary = "Overnight Russian missile and drone barrages struck three bridges across the Dnipro River in Kyiv, killing at least nine people across Ukraine and injuring 28 others. Mayor Vitali Klitschko closed damaged river crossings to private traffic while parts of the capital lost power, heat, and water. (Kyiv Independent, BBC)";
-const lockedAccentSummary = "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels. The agreement expands cooperation on maritime defense, hybrid threat intelligence, irregular migration, and youth educational exchanges. (EU Council, Reuters)";
-const kpis = ["3", "300,000+", "-5.6%", "2.3%", "$6B", "5"];
-
-assert.ok(typeset("iii", 9).width < typeset("WWW", 9).width, "Font must be proportional");
-assert.ok(typeset("Il1", 9).width > 0);
-
-text("TYPE BEFORE LAYOUT", 24, 16, 11, C.accent);
-const topNote = "ORIGINAL FILLED-CELL FONT / NODE BUILT-INS ONLY";
-text(topNote, 1000 - typeset(topNote).width, 18, 9, C.source);
-rule(39);
-
-label("01 / MASTHEAD / 44 PX CAPITAL HEIGHT", 52);
-centered("FRIDAY 20 NOVEMBER 2026", 78, 44, C.ink, 2);
-centered("Friday 20 November 2026", 139, 44, C.ink, 2);
-rule(207);
-
-label("02 / LOCKED HERO HEADLINE / 14 PX / 314 PX COLUMN", 221);
-const heroMetrics = paragraph(lockedHero, 24, 247, 314, 42, 14, 18);
-assert.ok(heroMetrics.lines <= 2, "Hero headline exceeds two lines");
-text("EXACT LOCKED TITLE / NO REWRITING", 390, 248, 9, C.source);
-text("EACH ADVANCE INCLUDES A POSITIVE LETTER GAP", 390, 268, 9, C.source);
-rule(298);
-
-label("03 / UNABRIDGED LOCKED COPY / 9 PX / 11.5 PX LEADING", 312);
-const wideBody = paragraph(lockedSummary, 24, 344, 314, 160);
-const narrowBody = paragraph(lockedSummary, 370, 344, 184, 160);
-const accentBody = paragraph(lockedAccentSummary, 594, 344, 406, 160);
-text("314 PX / COMPLETE HERO #1", 24, 510, 9, C.source, 1, 338);
-text("184 PX / SAME COPY", 370, 510, 9, C.source, 1, 554);
-text("406 PX / COMPLETE STORY #4 / ACCENT CHECK", 594, 510, 9, C.source);
-rule(535);
-
-label("04 / LETTER FORMS, NUMERALS AND PUNCTUATION", 551);
-text("THE QUICK BROWN FOX 0123456789 -5.6% $6B", 24, 579, 14);
-text("abcdefghijklmnopqrstuvwxyz", 24, 615, 14, C.ink, 2);
-text("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 24, 650, 14, C.ink, 2);
-text("0O 1Il ij MW mw ag pqy (Sources) · 'quotes' : ; , . + - % $ & António", 24, 688, 11, C.ink, 2);
-rule(715);
-
-label("05 / LOCKED KPI VALUES / 24 PX / 2 PX TRACKING", 730);
-kpis.forEach((value, index) => {
+// B — six unchanged KPI values and their complete labels.
+data.kpis.forEach((kpi, index) => {
   const left = 24 + Math.round(index * 976 / 6);
   const right = 24 + Math.round((index + 1) * 976 / 6);
-  if (index) fill(left, 758, 1, 48, rgb(C.rule));
-  centered(value, 768, 24, C.ink, 2, left + 4, right - left - 8);
+  const box = { x: left + 7, y: 134, width: right - left - 14, height: 60 };
+  if (index) image.rect(left, 138, 1.5, 52, P.ink);
+  center(kpi.value, 138, 24, index === 2 ? P.negative : P.ink, box, 2);
+  const label = paragraphMetrics(kpi.label, box.width, 8, 9.5);
+  assert.ok(label.lines.length <= 2);
+  label.lines.forEach((line, row) => center(line, 169 + Math.round(row * 9.5), 8, P.body, box));
 });
-text("NUMBERS ARE MEASURED BEFORE PLACEMENT. NOTHING IS CLIPPED OR ELLIPSIZED.", 24, 816, 9, C.source);
-rule(838);
+rule(196);
 
-label("06 / ENLARGED CONSTRUCTION / EVERY LIT CELL IS A FILLED SQUARE", 854);
-text("Ag ipq ó 36%", 24, 881, 42, C.ink, 4);
-text("PROPORTIONAL WIDTHS / EXPLICIT GLYPHS / VISIBLE COUNTERS / NO FONT FILES", 24, 950, 9, C.source);
-rule(977);
-text("TYPE SPECIMEN ONLY · FULL NEWSPAPER AWAITS COORDINATOR APPROVAL", 24, 993, 9, C.accent);
-assert.ok(paintedSourceCells > 0, "Source attribution must have its own ink color");
+// C — precisely allocated region blocks; colors match all story/map pins.
+let legendX = 24;
+for (const region of data.regions) {
+  const box = { x: legendX, y: 200, width: region.width, height: 20 };
+  image.rect(box.x, box.y, box.width, box.height, region.color);
+  center(`${region.name} ${region.count}`, 205, 9, P.white, box);
+  if (legendX !== 24) image.rect(legendX, 200, 2, 20, P.paper);
+  legendX += region.width;
+}
 
-const crcTable = Array.from({ length: 256 }, (_, value) => {
-  for (let bit = 0; bit < 8; bit++) value = value & 1 ? (value >>> 1) ^ 0xEDB88320 : value >>> 1;
-  return value >>> 0;
-});
-function crc32(bytes) {
-  let value = 0xFFFFFFFF;
-  for (const byte of bytes) value = crcTable[(value ^ byte) & 255] ^ (value >>> 8);
-  return (value ^ 0xFFFFFFFF) >>> 0;
-}
-function chunk(type, payload) {
-  const name = Buffer.from(type, "ascii");
-  const length = Buffer.alloc(4);
-  length.writeUInt32BE(payload.length);
-  const checksum = Buffer.alloc(4);
-  checksum.writeUInt32BE(crc32(Buffer.concat([name, payload])));
-  return Buffer.concat([length, name, payload, checksum]);
-}
-const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
-const header = Buffer.alloc(13);
-header.writeUInt32BE(W, 0);
-header.writeUInt32BE(H, 4);
-header[8] = 8;
-header[9] = 2; // Truecolor RGB, never RGBA.
-const scanlines = Buffer.alloc((1 + W * 3) * H);
-for (let row = 0; row < H; row++) {
-  const offset = row * (1 + W * 3);
-  scanlines[offset] = 0; // PNG filter 0 on every row.
-  pixels.copy(scanlines, offset + 1, row * W * 3, (row + 1) * W * 3);
-}
-const image = Buffer.concat([
-  signature,
-  chunk("IHDR", header),
-  chunk("IDAT", deflateSync(scanlines, { level: 9 })),
-  chunk("IEND", Buffer.alloc(0)),
-]);
-
-// Parse the finished file, check every chunk and decompress all scanlines.
-assert.ok(image.length < 1024 * 1024, "PNG must be smaller than 1 MiB");
-assert.deepEqual(image.subarray(0, 8), signature);
-let position = 8;
-const names = [];
-const compressed = [];
-while (position < image.length) {
-  const length = image.readUInt32BE(position);
-  assert.ok(position + length + 12 <= image.length, "Truncated PNG chunk");
-  const name = image.toString("ascii", position + 4, position + 8);
-  const data = image.subarray(position + 8, position + 8 + length);
-  const stored = image.readUInt32BE(position + 8 + length);
-  assert.equal(crc32(image.subarray(position + 4, position + 8 + length)), stored, `Bad ${name} CRC`);
-  names.push(name);
-  if (name === "IHDR") {
-    assert.equal(data.readUInt32BE(0), W);
-    assert.equal(data.readUInt32BE(4), H);
-    assert.deepEqual([...data.subarray(8)], [8, 2, 0, 0, 0]);
+function art(story, box) {
+  illustrate(image, story, box);
+  illustrationIds.push(story.id);
+  if (story.hero) {
+    plate(story.art.title, box.x + 6, box.y + 6, 9, P.red, P.white, box);
+    const subtitleWidth = measure(story.art.subtitle, 8).width + 8;
+    image.rect(box.x + 6, box.y + 30, subtitleWidth, 16, P.white);
+    image.border(box.x + 6, box.y + 30, subtitleWidth, 16, P.ink, 1);
+    text(story.art.subtitle, box.x + 10, box.y + 33, 8, P.ink, box);
+    plate(story.art.status, box.x + 6, box.y + 101, 7, P.ink, P.white, box);
+    if (story.id === 3) {
+      [["Taipei", "-5.6%"], ["Seoul", "-5.3%"], ["Tokyo", "-4.8%"]].forEach(([place, drop], i) => {
+        text(place, box.x + 211, box.y + 45 + i * 20, 9, P.white, box);
+        text(drop, box.x + box.width - 6 - measure(drop, 9).width, box.y + 45 + i * 20, 9, "#EF4444", box);
+      });
+    }
+  } else {
+    plate(story.art.title, box.x + 4, box.y + 2, 7, P.red, P.white, box);
+    if (story.id === 8) text("STRIKE", box.x + 110, box.y + 16, 7, P.white, box);
+    if (story.id === 14) text("$350M+", box.x + 132, box.y + 16, 7, P.ink, box);
+    const run = measure(story.art.status, 7);
+    plate(story.art.status, box.x + box.width - run.width - 12, box.y + 29, 7, "#FDF8F6", P.ink, box);
   }
-  if (name === "IDAT") compressed.push(data);
-  position += length + 12;
 }
-assert.equal(position, image.length);
-assert.deepEqual(names, ["IHDR", "IDAT", "IEND"]);
-const recovered = inflateSync(Buffer.concat(compressed));
-assert.deepEqual(recovered, scanlines);
-for (let row = 0; row < H; row++) assert.equal(recovered[row * (1 + W * 3)], 0);
 
-const destination = fileURLToPath(new URL("./test-font.png", import.meta.url));
-writeFileSync(destination, image);
-assert.deepEqual(readFileSync(destination), image);
+function fitSummary(story, box, sourceOnKicker = false) {
+  const combine = indices => [...indices.map(i => story.sentences[i]), ...(sourceOnKicker ? [] : [story.source])].join(" ");
+  const candidates = [[0, 1], [0], [1]];
+  const attempts = candidates.map(indices => {
+    const value = combine(indices);
+    const metrics = paragraphMetrics(value, box.width, 9, 11.5);
+    return { indices, value, lines: metrics.lines.length, height: metrics.height, fits: metrics.height <= box.height };
+  });
+  const selected = attempts.find(attempt => attempt.fits);
+  assert.ok(selected, `No intact sentence fits story ${story.id}`);
+  paragraph(selected.value, box, 9, 11.5, P.body, Infinity, sourceOnKicker ? "" : story.source);
+  const omitted = story.sentences.map((sentence, index) => ({ number: index + 1, text: sentence })).filter(item => !selected.indices.includes(item.number - 1));
+  const record = {
+    id: story.id, title: story.title,
+    retainedSentenceNumbers: selected.indices.map(i => i + 1),
+    retainedSentences: selected.indices.map(i => story.sentences[i]),
+    omittedSentences: omitted, renderedText: selected.value,
+    source: story.source, sourcePlacement: sourceOnKicker ? "kicker" : "summary",
+    summaryBox: box, capHeight: 9, leading: 11.5,
+    renderedLines: selected.lines, renderedHeight: selected.height,
+    completeSummaryHeight: attempts[0].height,
+  };
+  assert.ok(record.retainedSentences.every(sentence => story.sentences.includes(sentence)));
+  assert.ok(record.retainedSentences.length > 0);
+  summaries.push(record);
+}
+
+// D — three heroes in the locked order.
+data.stories.slice(0, 3).forEach((story, index) => {
+  const x = 24 + index * 331;
+  const column = { x, y: 226, width: 314, height: 246 };
+  inBox(x, 226, 314, 246, page, `Hero ${story.id}`);
+  art(story, { x, y: 226, width: 314, height: 118 });
+  badge(story.id, x + 7, 357, colors.get(story.region), 7, column);
+  text(story.kicker, x + 20, 353, 7, P.ink, column);
+  headline(story, { x, y: 366, width: 314, height: 42 }, 14, 18);
+  fitSummary(story, { x, y: 411, width: 314, height: 59 });
+  if (index < 2) image.rect(x + 322, 226, 1, 246, P.line);
+  storiesDrawn.push(story.id);
+});
+rule(475);
+
+// E and the right side of F share exactly the same 184 px grid.
+function smallCard(story, x, y, height = 148) {
+  const column = { x, y, width: 184, height };
+  inBox(x, y, 184, height, page, `Card ${story.id}`);
+  art(story, { x, y, width: 184, height: 44 });
+  badge(story.id, x + 7, y + 53, colors.get(story.region), 6.5, column);
+  if (story.id === 4) {
+    text("UK · EU", x + 20, y + 49, 7, P.ink, column);
+    text(story.source, x + 184 - measure(story.source, 9).width, y + 47, 9, P.source, column);
+  } else text(story.kicker, x + 20, y + 49, 7, P.ink, column);
+  headline(story, { x, y: y + 61, width: 184, height: 28 }, 11, 13.5);
+  fitSummary(story, { x, y: y + 92, width: 184, height: height - 92 }, story.id === 4);
+  storiesDrawn.push(story.id);
+}
+data.stories.slice(3, 13).forEach((story, index) => smallCard(story, 24 + index % 5 * 198, index < 5 ? 481 : 637));
+for (const x of [215, 413, 611, 809]) image.rect(x, 481, 1, 304, P.line);
+image.rect(24, 633, 976, 1, P.line);
+rule(789);
+
+// F — all 16 map pins, plus stories #14–#16.
+text("WHERE IT HAPPENED", 24, 795, 9);
+const pins = drawWorldMap(image, data.stories, colors, { x: 24, y: 811, width: 382, height: 134 });
+for (const pin of pins) {
+  const run = measure(String(pin.id), 7);
+  text(String(pin.id), pin.x - Math.ceil(run.width / 2), pin.y - 4, 7, P.white, { x: 24, y: 811, width: 382, height: 134 });
+}
+text("Each number matches the story pin on this page.", 24, 952, 7, P.source, { x: 24, y: 795, width: 382, height: 168 });
+data.stories.slice(13).forEach((story, index) => smallCard(story, 420 + index * 198, 795, 168));
+for (const x of [413, 611, 809]) image.rect(x, 795, 1, 168, P.line);
+
+// G — the only date exclusion box, then the complete two-part colophon.
+image.rect(24, 968, 976, 24, "#FDF8F6");
+image.border(24, 968, 976, 24, P.red, 1.5);
+text("DATE CHECK", 31, 974, 9, P.red, { x: 29, y: 970, width: 85, height: 20 });
+paragraph(data.dateCheck, { x: 116, y: 970, width: 878, height: 20 }, 9, 10, P.ink, 2);
+text(data.footerLeft, 24, 999, 7, P.source);
+text(data.footerRight, 1000 - measure(data.footerRight, 7).width, 999, 7, P.source);
+
+assert.deepEqual(storiesDrawn, data.stories.map(story => story.id));
+assert.deepEqual(illustrationIds, storiesDrawn);
+assert.equal(pins.length, 16);
+assert.equal(summaries.length, 16);
+assert.equal(headlines.length, 16);
+assert.equal(sha(JSON.stringify(data)), contentSha256, "Locked data mutated during rendering");
+const png = encodePNG(image);
+const inspected = inspectPNG(png);
+assert.equal(inspected.width, 1024); assert.equal(inspected.height, 1024);
+assert.ok(png.length < 1024 * 1024, "PNG exceeds 1 MiB");
+for (let y = 0; y < 1024; y++) {
+  assert.deepEqual(inspected.raw.subarray(y * 3073 + 1, (y + 1) * 3073), image.pixels.subarray(y * 3072, (y + 1) * 3072));
+}
+
+const output = process.platform === "win32" ? "C:\\output\\entry.png" : "/output/entry.png";
+const copied = join(root, "out", "entry.png");
+mkdirSync(dirname(output), { recursive: true }); mkdirSync(dirname(copied), { recursive: true });
+writeFileSync(output, png);
+copyFileSync(output, copied);
+assert.deepEqual(readFileSync(output), png); assert.deepEqual(readFileSync(copied), png);
+const pngSha256 = sha(png);
+const report = {
+  stage: "full-build", fontGateCommit: "9870d02209ef0e3a9eb01c0c112d2a01c9a4e6c5",
+  lockedContentCanonicalSha256: contentSha256,
+  png: { width: 1024, height: 1024, colorType: 2, bitDepth: 8, scanlineFilter: 0, crcVerified: true, bytes: png.length, sha256: pngSha256 },
+  storyCount: 16, illustrationCount: illustrationIds.length, mapPinCount: pins.length,
+  originalHeadlinesPreserved: true, completeSourcesPreserved: true, kpiValues: data.kpis.map(kpi => kpi.value),
+  allTextBoxesDisjointAndWithinBounds: true, noFontShrinking: true,
+  sentencePolicy: "Complete summary if it fits; otherwise first intact sentence if it fits, else second intact sentence. Never rewrite or cut inside a sentence.",
+  layoutNotes: ["Story #4 attribution is in its kicker row so one intact sentence fits at 9 px.", "Actual rounded cell bounds retain a minimum one-pixel inter-letter gap.", "Up to five 9 px lines fit some specified summary boxes without exceeding their pixel bounds.", "After the first full render, headlines were balanced over two measured lines to remove orphans without changing words or sizes."],
+  truncations: summaries.filter(summary => summary.omittedSentences.length > 0),
+  completeSummaries: summaries.filter(summary => !summary.omittedSentences.length).map(summary => summary.id),
+  headlines, summaries, pins, textBoxes: boxes,
+};
+writeFileSync(join(root, "out", "render-report.json"), JSON.stringify(report, null, 2) + "\n");
 const runtimeMs = Number(process.hrtime.bigint() - started) / 1e6;
-assert.ok(runtimeMs < 10_000, "Runtime must stay below 10 seconds");
-console.log(JSON.stringify({
-  stage: "font-gate-only",
-  output: destination,
-  width: W, height: H, bitDepth: 8, colorType: 2, scanlineFilter: 0,
-  chunks: names, crcVerified: true,
-  bytes: image.length,
-  sha256: createHash("sha256").update(image).digest("hex"),
-  runtimeMs: Number(runtimeMs.toFixed(2)),
-  registeredGlyphs: alphabet.size, paintedCells, paintedSourceCells,
-  allTextBoxesDisjoint: true,
-  samples: { heroMetrics, wideBody, narrowBody, accentBody },
-}, null, 2));
+assert.ok(runtimeMs < 10_000, "Runtime exceeds 10 seconds");
+console.log(JSON.stringify({ output, copied, bytes: png.length, sha256: pngSha256, runtimeMs: Number(runtimeMs.toFixed(2)), stories: storiesDrawn.length, pins: pins.length, summariesTruncated: report.truncations.length, completeSummaries: report.completeSummaries, report: "out/render-report.json" }, null, 2));

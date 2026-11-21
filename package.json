@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "generate": "node main.ts",
-    "font-gate": "node main.ts"
+    "font-gate": "node font-gate.ts",
+    "verify": "node verify.ts"
   }
 }
