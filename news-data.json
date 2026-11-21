@@ -27,9 +27,10 @@
     { "region": "UK · EU", "tag": "UK-EU DEAL: NEW ACCORD SEALED", "color": "#3f51b5", "body": "London and Brussels sign post-Brexit security and trade pact in Brussels." },
     { "region": "GENEVA · CLIMATE", "tag": "COP31 CLIMATE TALKS STALL WITHOUT DEAL", "color": "#388e3c", "body": "Final day negotiations break down over emissions financing targets." },
     { "region": "PRZEWODÓW · SECURITY", "tag": "POLAND TRACKS MISSILE NEAR BORDER", "color": "#c62828", "body": "Air defense systems triggered by stray rocket trajectory near Ukraine border." },
+    { "region": "TOKYO · ECONOMY", "tag": "JAPAN INFLATION RISES TO 2.3%", "color": "#1976d2", "body": "Tokyo CPI climbs as household spending and fuel costs push the annual rate higher." },
     { "region": "BAGHDAD · DEFENSE", "tag": "IRAQI FORCES REINFORCE BORDER", "color": "#f9a825", "body": "Armored units deployed to western desert outposts citing regional security." },
     { "region": "ROME · LABOR", "tag": "GENERAL STRIKE PARALYZES ITALY", "color": "#7b1fa2", "body": "Transit, health, and school workers strike over budget cuts and wages." },
-    { "region": "TURKANA · ENERGY", "tag": "KENYA OIL PROJECT ADVANCES", "color": "#388e3c", "body": "South Lokichar exploration clears final drilling permits for $8B field." },
+    { "region": "TURKANA · ENERGY", "tag": "KENYA OIL PROJECT ADVANCES", "color": "#388e3c", "body": "South Lokichar exploration clears final drilling permits for the $8B field." },
     { "region": "SAN SALVADOR · POLITICS", "tag": "BUKELÉ FILES THIRD-TERM BID", "color": "#c62828", "body": "El Salvador president formally registers candidacy for 2029 re-election." },
     { "region": "WASHINGTON · LAW", "tag": "TRUMP BORDER ARCH ORDER HALTED", "color": "#1976d2", "body": "Federal judge blocks emergency funding use for commemorative monument." },
     { "region": "JIZRAH · DEFENSE", "tag": "SAUDI DEFENSES INTERCEPT 5 DRONES", "color": "#c62828", "body": "Air defense systems destroy unmanned aircraft launched toward western areas." }
