@@ -1,1 +1,9 @@
-{"type":"module","dependencies":{"opentype.js":"^2.0.0"}}
+{
+  "type": "module",
+  "scripts": {
+    "generate": "node main.ts"
+  },
+  "dependencies": {
+    "opentype.js": "^2.0.0"
+  }
+}
