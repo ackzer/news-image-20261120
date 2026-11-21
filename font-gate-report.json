@@ -1,0 +1,68 @@
+{
+  "stage": "font-gate-only",
+  "approval": "pending-coordinator-review",
+  "artifact": "test-font.png",
+  "entryPoint": "main.ts",
+  "nodeVersionTested": "v22.23.5",
+  "mainFullFileWrites": 2,
+  "visualInspections": 2,
+  "firstRender": {
+    "bytes": 20240,
+    "sha256": "eb3b002da0d3cfb17ca08382e176a04d86d5af2cf770ccfd8c41c16df99c6a36",
+    "runtimeMs": 188.16
+  },
+  "singleRefinementPass": [
+    "Use #525252 for the complete parenthesized source attributions.",
+    "Increase tracking only in diagnostic alphabet and punctuation lines.",
+    "Add an enlarged accented glyph to make the accent construction inspectable."
+  ],
+  "finalArtifact": {
+    "width": 1024,
+    "height": 1024,
+    "bytes": 20414,
+    "bitDepth": 8,
+    "colorType": 2,
+    "scanlineFilter": 0,
+    "chunks": ["IHDR", "IDAT", "IEND"],
+    "allChunkCrcsVerified": true,
+    "all1024ScanlineFiltersVerified": true,
+    "independentBitwiseCrcVerification": true,
+    "fullRasterRoundTripVerified": true,
+    "allTextBoxesWithinBoundsAndDisjoint": true,
+    "registeredGlyphs": 89,
+    "paintedGlyphCells": 19990,
+    "paintedSourceAttributionCells": 674
+  },
+  "determinism": {
+    "run1Sha256": "c45d72015703fbe344bdeff3d6149752a0bb3bd656c92236f5d735a535fd990e",
+    "run2Sha256": "c45d72015703fbe344bdeff3d6149752a0bb3bd656c92236f5d735a535fd990e",
+    "run1RuntimeMs": 164.78,
+    "run2RuntimeMs": 160.28,
+    "identical": true
+  },
+  "imports": [
+    "node:assert/strict",
+    "node:crypto",
+    "node:fs",
+    "node:url",
+    "node:zlib"
+  ],
+  "externalDependencies": 0,
+  "lockedSampleWrapReconstructionVerified": true,
+  "ownerMetadataUnchanged": true,
+  "legacyRendererModulesRemoved": true,
+  "legacyNewsImageRemoved": true,
+  "fitIssueBeforeStage2": {
+    "sample": "Complete locked hero #1 summary including source attribution",
+    "capHeight": 9,
+    "leading": 11.5,
+    "columnWidth": 314,
+    "measuredLines": 7,
+    "measuredHeight": 80,
+    "specifiedFinalLayoutHeight": 59,
+    "lockedContentShortened": false,
+    "resolution": "Await font-gate approval and a content-preserving fit strategy before full build."
+  },
+  "fullBuildStarted": false,
+  "makefunCommandsRun": false
+}
