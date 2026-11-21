@@ -2,7 +2,7 @@
 // No packages, network, external assets, random values, or clock-based content.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { measure, paragraphMetrics } from "./typeface.ts";
@@ -275,12 +275,10 @@ for (let y = 0; y < 1024; y++) {
   assert.deepEqual(inspected.raw.subarray(y * 3073 + 1, (y + 1) * 3073), image.pixels.subarray(y * 3072, (y + 1) * 3072));
 }
 
-const output = process.platform === "win32" ? "C:\\output\\entry.png" : "/output/entry.png";
-const copied = join(root, "out", "entry.png");
-mkdirSync(dirname(output), { recursive: true }); mkdirSync(dirname(copied), { recursive: true });
+const output = join(process.env.MAKEFUN_OUTPUT_DIR ?? (process.platform === "win32" ? "C:\\output" : "/output"), "entry.png");
+mkdirSync(dirname(output), { recursive: true });
 writeFileSync(output, png);
-copyFileSync(output, copied);
-assert.deepEqual(readFileSync(output), png); assert.deepEqual(readFileSync(copied), png);
+assert.deepEqual(readFileSync(output), png);
 const pngSha256 = sha(png);
 const report = {
   stage: "full-build", fontGateCommit: "9870d02209ef0e3a9eb01c0c112d2a01c9a4e6c5",
@@ -305,7 +303,6 @@ const report = {
   completeSummaries: summaries.filter(summary => !summary.omittedSentences.length).map(summary => summary.id),
   headlines, summaries, pins, textBoxes: boxes,
 };
-writeFileSync(join(root, "out", "render-report.json"), JSON.stringify(report, null, 2) + "\n");
 const runtimeMs = Number(process.hrtime.bigint() - started) / 1e6;
 assert.ok(runtimeMs < 10_000, "Runtime exceeds 10 seconds");
-console.log(JSON.stringify({ output, copied, bytes: png.length, sha256: pngSha256, runtimeMs: Number(runtimeMs.toFixed(2)), stories: storiesDrawn.length, pins: pins.length, summariesTruncated: report.truncations.length, completeSummaries: report.completeSummaries, report: "out/render-report.json" }, null, 2));
+console.log(JSON.stringify({ output, bytes: png.length, sha256: pngSha256, runtimeMs: Number(runtimeMs.toFixed(2)), stories: storiesDrawn.length, pins: pins.length, summariesTruncated: report.truncations.length, completeSummaries: report.completeSummaries }, null, 2));
