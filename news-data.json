@@ -1,0 +1,22 @@
+{
+  "masthead": "FRIDAY NIGHT",
+  "grid": [
+    "EUROPEAN MISSILES HIT THREE KYIV BRIDGES",
+    "SEVERE CYCLONIC STORM AKVAN MAKES LANDFALL",
+    "ASIAN MARKETS PLUNGE ON AI SELL-OFF",
+    "HEADLINE 4",
+    "HEADLINE 5",
+    "HEADLINE 6",
+    "HEADLINE 7",
+    "HEADLINE 8",
+    "HEADLINE 9"
+  ],
+  "stories": [
+    "Story 1: Lorem ipsum dolor sit amet.",
+    "Story 2: Consectetur adipiscing elit.",
+    "Story 3: Sed do eiusmod tempor.",
+    "Story 4: Incididunt ut labore et dolore.",
+    "Story 5: Magna aliqua.",
+    "Story 6: Ut enim ad minim veniam."
+  ]
+}
