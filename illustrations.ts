@@ -99,8 +99,8 @@ export function illustrate(raster, story, box) {
       case 6: {
         bg("#BAC497"); polygon([[0,34],[28,24],[53,32],[91,23],[126,30],[155,22],[184,30],[184,44],[0,44]],"#4D7C0F");
         rect(0,24,72,7,"#FFFFFF"); rect(0,31,72,7,"#DC2626");
-        line(149,7,119,31,"#263440",5); line(147,7,125,25,"#DEE3DC",2);
-        polygon([[118,26],[115,35],[126,31]],"#DC2626"); polygon([[145,10],[154,9],[149,17]],"#263440");
+        line(149,1,119,25,"#263440",5); line(147,1,125,19,"#DEE3DC",2);
+        polygon([[118,20],[115,29],[126,25]],"#DC2626"); polygon([[145,4],[154,3],[149,11]],"#263440");
         break;
       }
       case 7: {
@@ -115,7 +115,7 @@ export function illustrate(raster, story, box) {
         bg("#EEE2D4");
         for (let i=0;i<11;i++) { const x=76+i*10; ellipse(x,28+i%2*2,3,3,"#652B2B"); rect(x-3,32+i%2*2,6,12-i%2*2,"#7F1D1D"); }
         line(106,19,103,36,"#652B2B",2); line(167,18,170,36,"#652B2B",2);
-        rect(102,13,71,14,"#991B1B");
+        rect(102,8,71,13,"#991B1B");
         break;
       }
       case 9: {
@@ -141,8 +141,8 @@ export function illustrate(raster, story, box) {
         break;
       }
       case 12: {
-        bg("#ECE6DA"); rect(131,7,34,36,"#6B7280"); rect(128,7,40,5,"#9CA3AF");
-        ellipse(148,28,10,13,"#ECE6DA"); rect(138,28,20,15,"#ECE6DA");
+        bg("#DCE4EE"); rect(131,7,34,36,"#6B7280"); rect(128,7,40,5,"#9CA3AF");
+        ellipse(148,28,10,13,"#DCE4EE"); rect(138,28,20,15,"#DCE4EE");
         rect(128,40,13,4,"#52525B"); rect(155,40,13,4,"#52525B");
         line(125,43,172,4,"#DC2626",4);
         break;

@@ -9,8 +9,8 @@
     "bitDepth": 8,
     "scanlineFilter": 0,
     "crcVerified": true,
-    "bytes": 54815,
-    "sha256": "8ad2fb2d13b641bd88d1e39a5585764113af9e5223d3f09edfa3eb8049190cf2"
+    "bytes": 54768,
+    "sha256": "e0a3bbb76c7aba46bdaa7adb71d5c906102e0eca04bbc49a9ac051ff55c8c1de"
   },
   "storyCount": 16,
   "illustrationCount": 16,
@@ -34,6 +34,81 @@
     "Up to five 9 px lines fit some specified summary boxes without exceeding their pixel bounds.",
     "After the first full render, headlines were balanced over two measured lines to remove orphans without changing words or sizes."
   ],
+  "designAudit": {
+    "round": 1,
+    "editingMethod": "targeted patches; no whole-file rewrites",
+    "baselineCommit": "eb87a7590d01070b2e512dd8fda3d178ad5d34d7",
+    "sourceRelocationAttempts": [
+      {
+        "id": 4,
+        "source": "(EU Council, Reuters)",
+        "attemptedText": "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels. (EU Council, Reuters)",
+        "capHeight": 9,
+        "leading": 11.5,
+        "summaryBox": {
+          "x": 24,
+          "y": 573,
+          "width": 184,
+          "height": 56
+        },
+        "attemptedLines": [
+          "British Prime Minister Andy",
+          "Burnham and European Union",
+          "leaders Ursula von der Leyen and",
+          "António Costa signed a joint",
+          "summit pact in Brussels. (EU",
+          "Council, Reuters)"
+        ],
+        "requiredHeight": 68,
+        "availableHeight": 56,
+        "fits": false,
+        "outcome": "returned-to-kicker"
+      }
+    ],
+    "mapBox": {
+      "x": 24,
+      "y": 811,
+      "width": 382,
+      "height": 134
+    },
+    "landAdjustedPinIds": [
+      5,
+      6,
+      11,
+      12,
+      14,
+      15,
+      16
+    ],
+    "minimumPinSeparation": 15,
+    "illustrationChanges": {
+      "strikeBanner": {
+        "movedUp": 5,
+        "height": 13
+      },
+      "atpPayLabel": {
+        "movedUp": 5
+      },
+      "archSky": "#DCE4EE",
+      "projectile": {
+        "movedUp": 6
+      }
+    },
+    "dateCheck": {
+      "blackTextMovedDown": 1,
+      "lineY": [
+        971,
+        981
+      ],
+      "box": {
+        "x": 24,
+        "y": 968,
+        "width": 976,
+        "height": 24
+      }
+    },
+    "approvedTypefaceAndMastheadUnchanged": true
+  },
   "truncations": [
     {
       "id": 1,
@@ -1249,21 +1324,41 @@
     },
     {
       "id": 5,
-      "x": 263,
-      "y": 856,
+      "x": 247,
+      "y": 859,
       "actualX": 246.71,
       "actualY": 856.48,
       "color": "#374151",
-      "place": "Antalya"
+      "place": "Antalya",
+      "badgeAdjustment": {
+        "fromX": 263,
+        "fromY": 856,
+        "offsetFromAnchor": [
+          0,
+          3
+        ]
+      },
+      "landPolygonIndex": 3,
+      "onDrawnLand": true
     },
     {
       "id": 6,
-      "x": 238,
-      "y": 829,
+      "x": 233,
+      "y": 838,
       "actualX": 237.73,
       "actualY": 844.81,
       "color": "#1E3A5F",
-      "place": "SE Poland"
+      "place": "SE Poland",
+      "badgeAdjustment": {
+        "fromX": 238,
+        "fromY": 829,
+        "offsetFromAnchor": [
+          -5,
+          -7
+        ]
+      },
+      "landPolygonIndex": 3,
+      "onDrawnLand": true
     },
     {
       "id": 7,
@@ -1303,21 +1398,41 @@
     },
     {
       "id": 11,
-      "x": 123,
-      "y": 877,
+      "x": 126,
+      "y": 874,
       "actualX": 122.81,
       "actualY": 876.95,
       "color": "#155E75",
-      "place": "San Salvador"
+      "place": "San Salvador",
+      "badgeAdjustment": {
+        "fromX": 123,
+        "fromY": 877,
+        "offsetFromAnchor": [
+          3,
+          -3
+        ]
+      },
+      "landPolygonIndex": 0,
+      "onDrawnLand": true
     },
     {
       "id": 12,
-      "x": 135,
-      "y": 855,
+      "x": 131,
+      "y": 857,
       "actualX": 135.43,
       "actualY": 854.7,
       "color": "#155E75",
-      "place": "Washington"
+      "place": "Washington",
+      "badgeAdjustment": {
+        "fromX": 135,
+        "fromY": 855,
+        "offsetFromAnchor": [
+          -4,
+          2
+        ]
+      },
+      "landPolygonIndex": 0,
+      "onDrawnLand": true
     },
     {
       "id": 13,
@@ -1330,30 +1445,60 @@
     },
     {
       "id": 14,
-      "x": 212,
-      "y": 860,
+      "x": 231,
+      "y": 853,
       "actualX": 222.94,
       "actualY": 849.25,
       "color": "#374151",
-      "place": "Turin"
+      "place": "Turin",
+      "badgeAdjustment": {
+        "fromX": 212,
+        "fromY": 860,
+        "offsetFromAnchor": [
+          8,
+          4
+        ]
+      },
+      "landPolygonIndex": 3,
+      "onDrawnLand": true
     },
     {
       "id": 15,
-      "x": 117,
-      "y": 863,
+      "x": 116,
+      "y": 859,
       "actualX": 116.74,
       "actualY": 862.94,
       "color": "#4338CA",
-      "place": "Houston"
+      "place": "Houston",
+      "badgeAdjustment": {
+        "fromX": 117,
+        "fromY": 863,
+        "offsetFromAnchor": [
+          -1,
+          -4
+        ]
+      },
+      "landPolygonIndex": 0,
+      "onDrawnLand": true
     },
     {
       "id": 16,
-      "x": 93,
-      "y": 859,
+      "x": 97,
+      "y": 855,
       "actualX": 92.93,
       "actualY": 858.89,
       "color": "#4338CA",
-      "place": "Pasadena"
+      "place": "Pasadena",
+      "badgeAdjustment": {
+        "fromX": 93,
+        "fromY": 859,
+        "offsetFromAnchor": [
+          4,
+          -4
+        ]
+      },
+      "landPolygonIndex": 0,
+      "onDrawnLand": true
     }
   ],
   "textBoxes": [
@@ -2288,7 +2433,7 @@
     {
       "text": "STRIKE",
       "x": 926,
-      "y": 497,
+      "y": 492,
       "width": 33,
       "height": 7,
       "capHeight": 7
@@ -2831,16 +2976,16 @@
     },
     {
       "text": "5",
-      "x": 260,
-      "y": 852,
+      "x": 244,
+      "y": 855,
       "width": 5,
       "height": 7,
       "capHeight": 7
     },
     {
       "text": "6",
-      "x": 235,
-      "y": 825,
+      "x": 230,
+      "y": 834,
       "width": 5,
       "height": 7,
       "capHeight": 7
@@ -2879,16 +3024,16 @@
     },
     {
       "text": "11",
-      "x": 119,
-      "y": 873,
+      "x": 122,
+      "y": 870,
       "width": 7,
       "height": 7,
       "capHeight": 7
     },
     {
       "text": "12",
-      "x": 130,
-      "y": 851,
+      "x": 126,
+      "y": 853,
       "width": 9,
       "height": 7,
       "capHeight": 7
@@ -2903,24 +3048,24 @@
     },
     {
       "text": "14",
-      "x": 207,
-      "y": 856,
+      "x": 226,
+      "y": 849,
       "width": 9,
       "height": 7,
       "capHeight": 7
     },
     {
       "text": "15",
-      "x": 112,
-      "y": 859,
+      "x": 111,
+      "y": 855,
       "width": 9,
       "height": 7,
       "capHeight": 7
     },
     {
       "text": "16",
-      "x": 88,
-      "y": 855,
+      "x": 92,
+      "y": 851,
       "width": 9,
       "height": 7,
       "capHeight": 7
@@ -2944,7 +3089,7 @@
     {
       "text": "$350M+",
       "x": 552,
-      "y": 811,
+      "y": 806,
       "width": 35,
       "height": 7,
       "capHeight": 7
@@ -3232,7 +3377,7 @@
     {
       "text": "Left out as Thursday 19 November's news: the three-leader declaration in Shenzhen, the World Court's ruling on Myanmar, Tonga's drought emergency, and the",
       "x": 116,
-      "y": 970,
+      "y": 971,
       "width": 849,
       "height": 10,
       "capHeight": 9
@@ -3240,7 +3385,7 @@
     {
       "text": "migrant boat off Senegal.",
       "x": 116,
-      "y": 980,
+      "y": 981,
       "width": 133,
       "height": 10,
       "capHeight": 9

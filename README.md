@@ -41,24 +41,59 @@ The observed runtimes are saved in `out/verification-report.json`.
 | PNG encoding | 8-bit RGB, color type 2, no alpha |
 | Scanline filters | All 1024 rows use filter 0 |
 | Chunks | IHDR, IDAT, IEND; every CRC verified independently |
-| Size | 54,815 bytes; below 1 MiB |
-| Run 1 | 405.93 ms generator; 595.24 ms including Node startup |
-| Run 2 | 425.94 ms generator; 609.90 ms including Node startup |
+| Size | 54,768 bytes; below 1 MiB |
+| Run 1 | 416.57 ms generator; 605.06 ms including Node startup |
+| Run 2 | 408.71 ms generator; 591.37 ms including Node startup |
 | Determinism | Both PNG files and both render audits are byte-identical |
 | Repository copy | Byte-identical to the primary output |
 | Content | All 16 original headlines and all complete source attributions |
 | Geometry | No text-box overlaps or text outside page/card bounds |
+| Audited map pins | Pins 5, 6, 11, 12, 14, 15 and 16 lie on their drawn continent; minimum pin spacing 15 px |
 
 Both final PNG runs have SHA-256:
 
 ```text
-8ad2fb2d13b641bd88d1e39a5585764113af9e5223d3f09edfa3eb8049190cf2
+e0a3bbb76c7aba46bdaa7adb71d5c906102e0eca04bbc49a9ac051ff55c8c1de
 ```
 
-The first full render was opened for visual inspection. One subsequent
+During the original full build, the first render was opened for visual inspection. One subsequent
 whole-file rewrite of `main.ts` balanced headline line breaks, removing the
 single-word `coast` orphan without changing any title or font size. The final
 PNG was regenerated twice and opened again for visual inspection.
+
+## Design-audit correction round
+
+One audit round was applied through **targeted patches only**, with no
+whole-file rewrites, against baseline commit
+`eb87a7590d01070b2e512dd8fda3d178ad5d34d7`.
+
+- **Story #4 source attempt:** the exact first sentence followed by
+  `(EU Council, Reuters)` was measured at 9 px / 11.5 px leading in its
+  184 × 56 px summary box. It needs **six lines / 68 px**, exceeding the
+  available height by 12 px. The source therefore **returned to the kicker**;
+  the first sentence remains intact at five lines / 56 px. No font shrinking
+  or internal sentence cuts were used. Both JSON reports retain the exact
+  attempted text, wrapped lines, measurements and fallback outcome.
+- **Map:** only badges 5, 6, 11, 12, 14, 15 and 16 were moved. Their centers
+  and corresponding raster pixel centers are checked against the existing
+  Eurasian or North American land polygon. All 16 true location anchors,
+  all coastlines and the other nine badge positions are unchanged. The
+  Europe cluster 1, 4, 6, 8 and 14 stays separated; the minimum center
+  distance across the entire map is 15 px.
+- **Illustrations:** the STRIKE banner and lettering moved up 5 px, with
+  banner height reduced from 14 to 13 px; the `$350M+` label moved up 5 px.
+  Story #12's sky and arch opening now use `#DCE4EE`. Story #6's projectile
+  silhouette moved up 6 px.
+- **DATE CHECK:** both black lines moved down 1 px, to y=971 and y=981.
+  The 24 px box height, red label and all other zones are unchanged.
+- **Preservation:** the approved typeface source and masthead raster are
+  unchanged and hash-checked by `verify.ts`. A baseline pixel comparison
+  found changes only inside the six audited image regions; all headlines,
+  summary selections, locked data and ownership metadata remain unchanged.
+
+The corrected image was opened for visual inspection. Final verification
+passed for two sequential byte-identical PNG renders and render reports;
+`C:\output\entry.png` and `out/entry.png` are byte-identical.
 
 ## Sentence-boundary fitting — every omission disclosed
 

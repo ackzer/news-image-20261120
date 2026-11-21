@@ -20,6 +20,7 @@ const image = new Raster(1024, 1024, P.paper);
 const page = { x: 24, y: 16, width: 976, height: 994 };
 const boxes = [];
 const summaries = [];
+const sourceRelocationAttempts = [];
 const headlines = [];
 const storiesDrawn = [];
 const illustrationIds = [];
@@ -162,8 +163,8 @@ function art(story, box) {
     }
   } else {
     plate(story.art.title, box.x + 4, box.y + 2, 7, P.red, P.white, box);
-    if (story.id === 8) text("STRIKE", box.x + 110, box.y + 16, 7, P.white, box);
-    if (story.id === 14) text("$350M+", box.x + 132, box.y + 16, 7, P.ink, box);
+    if (story.id === 8) text("STRIKE", box.x + 110, box.y + 11, 7, P.white, box);
+    if (story.id === 14) text("$350M+", box.x + 132, box.y + 11, 7, P.ink, box);
     const run = measure(story.art.status, 7);
     plate(story.art.status, box.x + box.width - run.width - 12, box.y + 29, 7, "#FDF8F6", P.ink, box);
   }
@@ -217,12 +218,23 @@ function smallCard(story, x, y, height = 148) {
   inBox(x, y, 184, height, page, `Card ${story.id}`);
   art(story, { x, y, width: 184, height: 44 });
   badge(story.id, x + 7, y + 53, colors.get(story.region), 6.5, column);
+  const summaryBox = { x, y: y + 92, width: 184, height: height - 92 };
+  let sourceOnKicker = false;
   if (story.id === 4) {
+    const attemptedText = `${story.sentences[0]} ${story.source}`;
+    const attempted = paragraphMetrics(attemptedText, summaryBox.width, 9, 11.5);
+    sourceOnKicker = attempted.height > summaryBox.height;
+    sourceRelocationAttempts.push({ id: 4, source: story.source, attemptedText,
+      capHeight: 9, leading: 11.5, summaryBox, attemptedLines: attempted.lines,
+      requiredHeight: attempted.height, availableHeight: summaryBox.height,
+      fits: !sourceOnKicker, outcome: sourceOnKicker ? "returned-to-kicker" : "moved-to-summary" });
+  }
+  if (sourceOnKicker) {
     text("UK · EU", x + 20, y + 49, 7, P.ink, column);
     text(story.source, x + 184 - measure(story.source, 9).width, y + 47, 9, P.source, column);
   } else text(story.kicker, x + 20, y + 49, 7, P.ink, column);
   headline(story, { x, y: y + 61, width: 184, height: 28 }, 11, 13.5);
-  fitSummary(story, { x, y: y + 92, width: 184, height: height - 92 }, story.id === 4);
+  fitSummary(story, summaryBox, sourceOnKicker);
   storiesDrawn.push(story.id);
 }
 data.stories.slice(3, 13).forEach((story, index) => smallCard(story, 24 + index % 5 * 198, index < 5 ? 481 : 637));
@@ -245,7 +257,7 @@ for (const x of [413, 611, 809]) image.rect(x, 795, 1, 168, P.line);
 image.rect(24, 968, 976, 24, "#FDF8F6");
 image.border(24, 968, 976, 24, P.red, 1.5);
 text("DATE CHECK", 31, 974, 9, P.red, { x: 29, y: 970, width: 85, height: 20 });
-paragraph(data.dateCheck, { x: 116, y: 970, width: 878, height: 20 }, 9, 10, P.ink, 2);
+paragraph(data.dateCheck, { x: 116, y: 971, width: 878, height: 20 }, 9, 10, P.ink, 2);
 text(data.footerLeft, 24, 999, 7, P.source);
 text(data.footerRight, 1000 - measure(data.footerRight, 7).width, 999, 7, P.source);
 
@@ -279,6 +291,16 @@ const report = {
   allTextBoxesDisjointAndWithinBounds: true, noFontShrinking: true,
   sentencePolicy: "Complete summary if it fits; otherwise first intact sentence if it fits, else second intact sentence. Never rewrite or cut inside a sentence.",
   layoutNotes: ["Story #4 attribution is in its kicker row so one intact sentence fits at 9 px.", "Actual rounded cell bounds retain a minimum one-pixel inter-letter gap.", "Up to five 9 px lines fit some specified summary boxes without exceeding their pixel bounds.", "After the first full render, headlines were balanced over two measured lines to remove orphans without changing words or sizes."],
+  designAudit: {
+    round: 1, editingMethod: "targeted patches; no whole-file rewrites",
+    baselineCommit: "eb87a7590d01070b2e512dd8fda3d178ad5d34d7",
+    sourceRelocationAttempts,
+    mapBox: { x: 24, y: 811, width: 382, height: 134 },
+    landAdjustedPinIds: [5,6,11,12,14,15,16], minimumPinSeparation: 15,
+    illustrationChanges: { strikeBanner: { movedUp: 5, height: 13 }, atpPayLabel: { movedUp: 5 }, archSky: "#DCE4EE", projectile: { movedUp: 6 } },
+    dateCheck: { blackTextMovedDown: 1, lineY: [971,981], box: { x: 24, y: 968, width: 976, height: 24 } },
+    approvedTypefaceAndMastheadUnchanged: true,
+  },
   truncations: summaries.filter(summary => summary.omittedSentences.length > 0),
   completeSummaries: summaries.filter(summary => !summary.omittedSentences.length).map(summary => summary.id),
   headlines, summaries, pins, textBoxes: boxes,

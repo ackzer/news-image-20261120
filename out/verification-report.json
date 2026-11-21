@@ -7,7 +7,7 @@
     1024,
     1024
   ],
-  "bytes": 54815,
+  "bytes": 54768,
   "colorType": 2,
   "bitDepth": 8,
   "scanlineFilter": 0,
@@ -18,17 +18,17 @@
   "runs": [
     {
       "number": 1,
-      "sha256": "8ad2fb2d13b641bd88d1e39a5585764113af9e5223d3f09edfa3eb8049190cf2",
-      "bytes": 54815,
-      "generatorRuntimeMs": 405.93,
-      "wallRuntimeMs": 595.24
+      "sha256": "e0a3bbb76c7aba46bdaa7adb71d5c906102e0eca04bbc49a9ac051ff55c8c1de",
+      "bytes": 54768,
+      "generatorRuntimeMs": 416.57,
+      "wallRuntimeMs": 605.06
     },
     {
       "number": 2,
-      "sha256": "8ad2fb2d13b641bd88d1e39a5585764113af9e5223d3f09edfa3eb8049190cf2",
-      "bytes": 54815,
-      "generatorRuntimeMs": 425.94,
-      "wallRuntimeMs": 609.9
+      "sha256": "e0a3bbb76c7aba46bdaa7adb71d5c906102e0eca04bbc49a9ac051ff55c8c1de",
+      "bytes": 54768,
+      "generatorRuntimeMs": 408.71,
+      "wallRuntimeMs": 591.37
     }
   ],
   "storyIdsVerified": [
@@ -247,6 +247,77 @@
   ],
   "fullBuildMainWrites": 2,
   "refinementAfterFirstRender": "Balanced headline line breaks; the orphaned word coast is now part of a balanced second line.",
+  "designAudit": {
+    "round": 1,
+    "editingMethod": "targeted patches; no whole-file rewrites",
+    "baselineCommit": "eb87a7590d01070b2e512dd8fda3d178ad5d34d7",
+    "sourceRelocationAttempt": {
+      "id": 4,
+      "source": "(EU Council, Reuters)",
+      "attemptedText": "British Prime Minister Andy Burnham and European Union leaders Ursula von der Leyen and António Costa signed a joint summit pact in Brussels. (EU Council, Reuters)",
+      "capHeight": 9,
+      "leading": 11.5,
+      "summaryBox": {
+        "x": 24,
+        "y": 573,
+        "width": 184,
+        "height": 56
+      },
+      "attemptedLines": [
+        "British Prime Minister Andy",
+        "Burnham and European Union",
+        "leaders Ursula von der Leyen and",
+        "António Costa signed a joint",
+        "summit pact in Brussels. (EU",
+        "Council, Reuters)"
+      ],
+      "requiredHeight": 68,
+      "availableHeight": 56,
+      "fits": false,
+      "outcome": "returned-to-kicker"
+    },
+    "landAdjustedPinIds": [
+      5,
+      6,
+      11,
+      12,
+      14,
+      15,
+      16
+    ],
+    "auditedPinsOnCorrectDrawnContinent": true,
+    "trueLocationAnchorsUnchanged": true,
+    "minimumPinSeparation": 15,
+    "europeClusterIds": [
+      1,
+      4,
+      6,
+      8,
+      14
+    ],
+    "illustrationChanges": {
+      "strikeBanner": {
+        "movedUp": 5,
+        "height": 13
+      },
+      "atpPayLabel": {
+        "movedUp": 5
+      },
+      "archSky": "#DCE4EE",
+      "projectile": {
+        "movedUp": 6
+      }
+    },
+    "archSkyAndOpeningPixelsVerified": true,
+    "dateCheckLineY": [
+      971,
+      981
+    ],
+    "mastheadRasterUnchanged": true,
+    "approvedTypefaceSourceUnchanged": true,
+    "mastheadRasterSha256": "ae8d5788d7cbf737991f3cee0b106b151c73d184010e8fbe8802eeee15c10f33",
+    "typefaceSourceSha256": "9ac780a3f1660ab6c7ec53e8912852f0b4e77c232f91afc318e1980269f190d1"
+  },
   "ownerWalletUnchanged": true,
   "externalDependencies": 0,
   "imports": [

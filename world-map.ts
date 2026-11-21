@@ -18,6 +18,20 @@ const continents = [
   [[171,-34],[177,-39],[174,-42],[168,-46],[166,-45],[171,-39]],
 ];
 
+export function isMapLandPoint(x, y, box, polygonIndex) {
+  const lon = (x - box.x - 5) / (box.width - 10) * 360 - 180;
+  const lat = 85 - (y - box.y - 3) / (box.height - 6) * 145;
+  const polygons = polygonIndex === undefined ? continents : [continents[polygonIndex]];
+  return polygons.some(polygon => {
+    let inside = false;
+    for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+      const [ax, ay] = polygon[i]; const [bx, by] = polygon[j];
+      if ((ay > lat) !== (by > lat) && lon < (bx - ax) * (lat - ay) / (by - ay) + ax) inside = !inside;
+    }
+    return inside;
+  });
+}
+
 export function drawWorldMap(raster, stories, regionColors, box) {
   const project = (lon, lat) => [
     box.x + 5 + (lon + 180) / 360 * (box.width - 10),
@@ -62,6 +76,21 @@ export function drawWorldMap(raster, stories, regionColors, box) {
     }
     assert.ok(choice,`No collision-free position for map pin ${story.id}`);
     pins.push({id:story.id,...choice,actualX:Number(actualX.toFixed(2)),actualY:Number(actualY.toFixed(2)),color:regionColors.get(story.region),place:story.pin.place});
+  }
+  // Audit-only badge offsets from the true anchors; leave all other badges,
+  // story coordinates, coastlines and true-location leader anchors unchanged.
+  const auditedOffsets = new Map([[5,[0,3]],[6,[-5,-7]],[11,[3,-3]],[12,[-4,2]],[14,[8,4]],[15,[-1,-4]],[16,[4,-4]]]);
+  for (const pin of pins) {
+    const offset = auditedOffsets.get(pin.id);
+    if (!offset) continue;
+    const story = stories.find(item => item.id === pin.id);
+    const [anchorX, anchorY] = project(story.pin.lon, story.pin.lat);
+    pin.badgeAdjustment = { fromX: pin.x, fromY: pin.y, offsetFromAnchor: offset };
+    pin.x = Math.round(anchorX + offset[0]); pin.y = Math.round(anchorY + offset[1]);
+    pin.landPolygonIndex = [11,12,15,16].includes(pin.id) ? 0 : 3;
+    pin.onDrawnLand = isMapLandPoint(pin.x, pin.y, box, pin.landPolygonIndex)
+      && isMapLandPoint(pin.x + 0.5, pin.y + 0.5, box, pin.landPolygonIndex);
+    assert.ok(pin.onDrawnLand, `Audited map pin ${pin.id} must sit on its drawn continent`);
   }
   for(const pin of pins) {
     if(Math.hypot(pin.x-pin.actualX,pin.y-pin.actualY)>3) {
